@@ -25,6 +25,7 @@ Ruby Gems we recommend to use.
 ## Deployment
 
 * `capistrano`
+* [parity](https://github.com/thoughtbot/parity) - shell commands for development, staging, and production parity for Heroku apps
 
 ## Forms
 
