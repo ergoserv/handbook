@@ -1,0 +1,27 @@
+# ErgoServ Code Style
+# Version: 2019-03-21
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'vendor/**/*'
+
+#################### Metrics ###############################
+
+Metrics/MethodLength:
+  Max: 30
+
+#################### Rails #################################
+
+Rails:
+  Enabled: true
+
+#################### Style ###############################
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
