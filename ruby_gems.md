@@ -35,6 +35,12 @@ Ruby Gems we recommend to use.
 
 * `kaminari`
 
+## Performance
+
+* [bullet](https://github.com/flyerhzm/bullet)
+* [mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler)
+* `simplecov`
+
 ## Policies & Roles
 
 * `pundit`
@@ -43,6 +49,10 @@ Ruby Gems we recommend to use.
 ## Search
 * [ransack](https://github.com/activerecord-hackery/ransack)
 
+## Security
+
+* [Brakeman](https://brakemanscanner.org/)
+
 ## Testing
 * [airborne](https://github.com/brooklynDev/airborne) - RSpec driven API testing framework
 * `capybara`
@@ -50,16 +60,6 @@ Ruby Gems we recommend to use.
 * `faker`
 * `rspec-rails`
 * `shoulda-matchers`
-
-## Performance
-
-* [bullet](https://github.com/flyerhzm/bullet)
-* [mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler)
-* `simplecov`
-
-## Security
-
-* [Brakeman](https://brakemanscanner.org/)
 
 ## Uncategorized
 
