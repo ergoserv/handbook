@@ -18,7 +18,7 @@ We use a number of tools to enforce style compliance:
   * Rubocop, for Ruby lints
   * SCSS Lint, for SCSS lints
 
-First, you need to add the gems to your project's Gemfile:
+First, you need to add the gems to your project's `Gemfile`:
 
 ```ruby
 group :development, :test do

@@ -4,7 +4,7 @@ The following is a base template for an ActiveRecord model `Customer`.
 
 ## Key Points
 
-  * Avoid AR callbacks where possible, prefer Service Objects architecture to store any business
+  * Avoid ActiveRecord callbacks where possible, prefer Service Objects architecture to store any business
 
   * Order associations, scopes and validations alphabetically
 

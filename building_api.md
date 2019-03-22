@@ -1,4 +1,4 @@
-# Buling an API
+# Building an API
 
 ## Gems
 
