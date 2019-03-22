@@ -4,9 +4,10 @@ Our collection of guides, recipes and scripts for helping you get things done, b
 
 ## Sections
 
-* [Error Handing](guides/error_handling.md)
-* [Ruby Gems](guides/ruby_gems.md) - list of recommended Ruby Gems
-* [Service Objects](guides/service_objects.md)
+* [Guides](guides/)
+  - [Error Handing](guides/error_handling.md)
+  - [Ruby Gems](guides/ruby_gems.md) - list of recommended Ruby Gems
+  - [Service Objects](guides/service_objects.md)
 
 ## Inspired by
 
@@ -21,6 +22,10 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/ergose
 ## License
 
 These resources are copyright of ErgoServ. It is free software and available to distribute under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+------
+
+[![alt text](https://raw.githubusercontent.com/ergoserv/handbook/master/assets/ErgoServ_horizontalColor@sign+text+bg.png "ErgoServ - Web and Mobile Development Company")](https://www.ergoserv.com)
 
 These resources were created and are maintained by ErgoServ.
 
