@@ -4,9 +4,9 @@ Our collection of guides, recipes and scripts for helping you get things done, b
 
 ## Sections
 
-* [Error Handing](error_handling.md)
-* [Ruby Gems](ruby_gems.md) - list of recommended Ruby Gems
-* [Service Objects](service_objects.md)
+* [Error Handing](guides/error_handling.md)
+* [Ruby Gems](guides/ruby_gems.md) - list of recommended Ruby Gems
+* [Service Objects](guides/service_objects.md)
 
 ## Inspired by
 
