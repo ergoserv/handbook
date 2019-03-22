@@ -7,7 +7,7 @@ Form Objects is a solution to handle and process custom requests with custom val
 ## Conventions
 
 * Forms go under the `app/forms` directory.
-* Form name should have prefix `Form` (e.g.: `app/services/CompanyRegistrationForm.rb` file will define `CompanyRegistrationForm`)
+* Form name should have suffix `Form` (e.g.: `app/services/CompanyRegistrationForm.rb` file will define `CompanyRegistrationForm`)
 * Form may incaplulate business logic for proccessing the request, but for complex cases it is better to concider separate class around the [Service Objects](guides/service_objects.md) layer.
 
 ## Example

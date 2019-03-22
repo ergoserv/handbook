@@ -7,7 +7,7 @@ Service Objects is a solution to decomopse busissiness logic of the application 
 ## Conventions
 
 * Services go under the `app/services` directory.
-* Service name should have prefix `Service` (e.g.: `app/services/order_service.rb` file will define `module OrderService`)
+* Service name should have suffix `Service` (e.g.: `app/services/order_service.rb` file will define `module OrderService`)
 * Basic service file should define module (e.g.: `module OrderService`, `module GalleryService`)
 * Basic service module may contain constants, configurations, class methods
 * Use subdirectories to store subclasses of the service (e.g.: `gallery_service.rb`, `gallery_service/facebook_repository.rb`, etc)
