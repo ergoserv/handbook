@@ -12,7 +12,9 @@ Service Objects is a solution to decomopse busissiness logic of the application 
 * Basic service module may contain constants, configurations, class methods
 * Use subdirectories to store subclasses of the service (e.g.: `gallery_service.rb`, `gallery_service/facebook_repository.rb`, etc)
 
-## Example #1: GalleryService
+## Examples
+
+### Example #1: GalleryService
 
 You have taks to render user's photos. User have 3 sources of photos - Facebook, Instagram, and uploaded into our database.
 
@@ -135,7 +137,7 @@ end
 ```
 
 
-## Example #2: ImportService
+### Example #2: ImportService
 
 ```ruby
 # app/services/import_service.rb
@@ -221,5 +223,21 @@ module ImportService
     end
   end
 end
+```
 
+The whole list of files of this service is:
+```
+abstract_adapter.rb
+abstract_category.rb
+abstract_element.rb
+abstract_offer.rb
+yandex_csv.rb
+yandex_csv_adapter.rb
+yandex_csv_category.rb
+yandex_csv_offer.rb
+yandex_yml.rb
+yandex_yml_adapter.rb
+yandex_yml_category.rb
+yandex_yml_element.rb
+yandex_yml_offer.rb
 ```
