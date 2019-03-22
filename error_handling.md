@@ -67,20 +67,36 @@ class ApplicationError < StandardError
     end
   end
 end
-
-# usage
-begin
-  # code that can generate error
-rescue => e
-  ApplicationError.wrap(e).notify!
-  raise e
-end
 ```
 
+For example, we use Twilio to send SMS. Working with Twilio we can get many different errors - user errors (e.g. incorrect phone number), account errors (e.g. insufficient funds), service errors (e.g. service is down), etc. We want to handle all of them and provide users with undersndable feedback as well as notify our monitoring systems.
+
+```ruby
+class TwilioService
+  def send_sms(phone_numer, text)
+    # call Twilio REST client
+  rescue rescue Twilio::REST::RestError, Twilio::REST::TwilioError => e
+    raise TwilioService::Error.wrap(e)
+  end
+end
+
+class TwilioService::Error < ApplicationError
+  #
+  def friendly_message
+    I18n.t("code_#{code}", scope: 'twilio_service.errors', default: :default_message)
+  end
+end
+
+# controller
+begin
+  TwilioService.send_sms(...)
+rescue TwilioService::Error => e
+  e.notify!
+  redirect_back fallback_location: '/', notice: e.friendly_message
+end
+```
 
 ## Error Monitoring Services
 
 - Sentry.io
 - Airbrake.io
-
-
