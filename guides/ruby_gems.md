@@ -4,7 +4,7 @@ Ruby Gems we recommend to use.
 
 ## Administration
 
-* `activeadmin`
+* [activeadmin](https://github.com/activeadmin/activeadmin) - The administration framework for Ruby on Rails applications.
 
 ## API
 
@@ -43,15 +43,15 @@ Ruby Gems we recommend to use.
 
 ## Policies & Roles
 
-* `pundit`
-* [rolify](https://github.com/RolifyCommunity/rolify) - advanced role management library with resource scoping
+* [pundit](https://github.com/varvet/pundit) - Minimal authorization through OO design and pure Ruby classes
+* [rolify](https://github.com/RolifyCommunity/rolify) - Advanced role management library with resource scoping
 
 ## Search
 * [ransack](https://github.com/activerecord-hackery/ransack)
 
 ## Security
 
-* [Brakeman](https://brakemanscanner.org/)
+* [brakeman](https://brakemanscanner.org/)
 
 ## Testing
 * [airborne](https://github.com/brooklynDev/airborne) - RSpec driven API testing framework
