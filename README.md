@@ -1,15 +1,26 @@
-# ErgoServ Handbook
+# ErgoServ 📙 Orange Handbook
 
 Our collection of guides, recipes and scripts for helping you get things done, better.
 
-## Sections
+## Table of Contents
 
 * [Guides](guides/)
+  - [Code Style](guides/code_style.md)
+  - [Coding Principles](guides/coding_principles.md)
   - [Error Handing](guides/error_handling.md)
+  - [Form Objects](guides/form_objects.md)
+  - [Git](guides/git.md)
+  - [Models](guides/models.md)
+  - [Policies](guides/policies.md)
   - [Ruby Gems](guides/ruby_gems.md) - list of recommended Ruby Gems
   - [Service Objects](guides/service_objects.md)
+  - [Services and Tools](guides/services_and_tools.md)
+  - [Variables](guides/variables.md)
+  - [Vocabulary](guides/vocabulary.md)
+* [Templates](templates/)
+    - [Rubocop Configs](templates/rubocop)
 
-## Inspired by
+### Inspired by
 
 * https://github.com/DVELP/cookbook
 * https://github.com/basecamp/handbook
@@ -21,12 +32,12 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/ergose
 
 ## License
 
-These resources are copyright of ErgoServ. It is free software and available to distribute under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+These resources are copyright of [ErgoServ](https://www.ergoserv.com). It is free software and available to distribute under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 ------
 
 [![alt text](https://raw.githubusercontent.com/ergoserv/handbook/master/assets/ErgoServ_horizontalColor@sign+text+bg.png "ErgoServ - Web and Mobile Development Company")](https://www.ergoserv.com)
 
-These resources were created and are maintained by ErgoServ.
+These resources were created and are maintained by [ErgoServ](https://www.ergoserv.com).
 
 If you like what you see and would like to hire us or join us, [get in touch](https://www.ergoserv.com)!
