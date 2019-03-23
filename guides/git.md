@@ -7,7 +7,7 @@ Branch                                   | May branch off from   | Must merge ba
 `master`                                 | —                     | `develop`                  | `ff`       | The latest stable version of the code base.
 `develop`                                | `master`              | `release/x.x.x`            |            | Default branch to create new branches from and target branch for PRs.
 `feature/subject`, `feature/xxx-subject` | `develop`             | `develop`, `release/x.x.x` | `no-ff`    | Use for developing new features. Merged into `develop` or `release/x.x.x` after testing and accepting. `xxx` - issue ID in task tracker like Redmine, `subject` - issue subject.
-`hotfix/subject`, `hotfix/xxx-subject`   | `master`              | `master`, `develop`        | `no-ff`    | Maintenance or “hotfix” branches are used to quickly patch production releases. Fixes but unlike the `fix-subject` used for hot and temporary fixes. `xxx` - issue ID in task tracker like Redmine, `subject` - issue subject.
+`hotfix/subject`, `hotfix/xxx-subject`   | `master`              | `master`, `develop`        | `no-ff`    | Maintenance or “hotfix” branches are used to quickly patch production releases. Where `xxx` - issue ID in task tracker like Redmine, `subject` - issue subject.
 `release/x.x.x`                          | `develop`             | `master`                   | `no-ff`    | `x.x.x` - release version following [Semantic Versioning](https://semver.org/) conventions by default or project specific version conventions
 `staging`                                | `develop`             | —                          | —          | Represents the current staging server state. develop, feature/*, hotfix/* branches may be merged here directly for testing and demonstration.
 `production`                             | `master`              | —                          | —          | Represents the production server state. Always, event when maser is already preparing for the next release. hotfix/* branched may be merged into it directly.
@@ -72,7 +72,7 @@ $ git config --global user.name "John Doe"
 $ git config --global user.email johndoe@ergoserv.com
 ```
 
-## Links
+## References
 * [Git Book](https://git-scm.com/book/en/v2)
 * [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 * [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
