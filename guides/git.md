@@ -8,14 +8,29 @@ Branch                                   | May branch off from   | Must merge ba
 `develop`                                | `master`              | `release/x.x.x`            |            | Default branch to create new branches from and target branch for PRs.
 `feature/subject`, `feature/xxx-subject` | `develop`             | `develop`, `release/x.x.x` | `no-ff`    | Use for developing new features. Merged into `develop` or `release/x.x.x` after testing and accepting. `xxx` - issue ID in task tracker like Redmine, `subject` - issue subject.
 `hotfix/subject`, `hotfix/xxx-subject`   | `master`              | `master`, `develop`        | `no-ff`    | Maintenance or “hotfix” branches are used to quickly patch production releases. Where `xxx` - issue ID in task tracker like Redmine, `subject` - issue subject.
-`release/x.x.x`                          | `develop`             | `master`                   | `no-ff`    | `x.x.x` - release version following [Semantic Versioning](https://semver.org/) conventions by default or project specific version conventions
+`release/x.x.x`                          | `develop`             | `master`                   | `no-ff`    | `x.x.x` - release version following [Semantic Versioning](https://semver.org/) conventions by default or project specific version conventions.
 `staging`                                | `develop`             | —                          | —          | Represents the current staging server state. develop, feature/*, hotfix/* branches may be merged here directly for testing and demonstration.
 `production`                             | `master`              | —                          | —          | Represents the production server state. Always, event when maser is already preparing for the next release. hotfix/* branched may be merged into it directly.
 
 
 ## Develop and Master Branches
 
+Instead of a single master branch, we use two branches to record the history of the project. The `master` branch stores the official release history, and the `develop` branch serves as an integration branch for features. `develop` may contain features that were not released yet. `develop` is a default branch to create feature branches from.
+
+
+### Creating a develp branch
+
+```
+git branch develop
+git push -u origin develop
+```
+
 ## Feature Branches
+
+Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. But, instead of branching off of `master`, feature branches use `develop` as their parent branch. When a feature is complete, it gets merged back into `develop`. Features should never interact directly with `master`.
+
+Feature branches are generally created off to the latest `develop` branch.
+
 
 ### Creating a feature branch
 
@@ -26,9 +41,15 @@ git checkout -b feature/subject
 
 ## Staging and Production Branches
 
+Web development flow includes two special branches: `staging` and `production`. These branches are designed to collect code for delivering to staging and production servers respectively.
+
+`staging` is created from `develop`. `production` - from `master`.
+
+Developers may continuously merge feature branches (even if they are in WIP status) into `staging` branch and deploy to staging server for reviews. Time to time, `staging` can be reset to `develop`.
+
 ## Maintenance or “hotfix” branches
 
-Maintenance or “hotfix” branches are used to quickly patch production releases. Hotfix branches are a lot like release branches and feature branches except they're based on master instead of develop. This is the only branch that should fork directly off of master. As soon as the fix is complete, it should be merged into both master and develop (or the current release branch), and master should be tagged with an updated version number.
+Maintenance or “hotfix” branches are used to quickly patch production releases. Hotfix branches are a lot like release branches and feature branches except they're based on `master` instead of `develop`. This is the only branch that should fork directly off of `master`. As soon as the fix is complete, it should be merged into both `master` and `develop` (or the current release branch), and `master` should be tagged with an updated version number.
 
 ### Creating a hotfix branch
 
