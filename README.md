@@ -12,6 +12,7 @@ Our collection of guides, recipes and scripts for helping you get things done, b
   - [Git](guides/git.md)
   - [Models](guides/models.md)
   - [Policies](guides/policies.md)
+  - [Query Objects](guides/query_objects.md)
   - [Ruby Gems](guides/ruby_gems.md) - list of recommended Ruby Gems
   - [Service Objects](guides/service_objects.md)
   - [Services and Tools](guides/services_and_tools.md)
