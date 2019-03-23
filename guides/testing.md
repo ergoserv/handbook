@@ -2,6 +2,10 @@
 
 * [Better Specs](http://www.betterspecs.org/)
 
+## Factories
+
+* Base factory should define only required an mandatory fields
+
 ## Gems
 
 * [airborne](https://github.com/brooklynDev/airborne) - RSpec driven API testing framework
