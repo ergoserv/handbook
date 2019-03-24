@@ -33,8 +33,8 @@ Then you need to add some configs that implement our styles.
 
 The following is a list of configuration files you're encouraged to use in a new project:
 
-* [.rubocop.yml](templates/rubocop/.rubocop.yml)
-* [.rubocop_ergoserv.yml](templates/rubocop/.rubocop_ergoserv.yml)
+* [.rubocop.yml](https://github.com/ergoserv/handbook/blob/master/templates/rubocop/.rubocop.yml)
+* [.rubocop_ergoserv.yml](https://github.com/ergoserv/handbook/blob/master/templates/rubocop/.rubocop_ergoserv.yml)
 
 These files should go into your project's root directory.
 `.rubocop_ergoserv.yml` - should not be modified in order to be able to be updated it when needed.
