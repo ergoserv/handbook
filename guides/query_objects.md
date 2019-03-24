@@ -10,6 +10,7 @@ Query Objects are useful to extract complex SQL queries into their own classes, 
 * Query class name should have suffix `Query` (e.g. `AuthorsQuery`).
 * Query class name should start with primary model used in query in plular form (e.g. `AuthorsWithBooksQuery`).
 * Query classes should be inherited from `ApplicationQuery` (drop-in template - [application_query.rb](../templates/query_objects/application_query.rb)).
+* Query classes should define `query` method where query logic is incapsulated.
 
 ## Examples
 
@@ -45,6 +46,11 @@ class AuthorsWithBooksQuery < AuthorsQuery
     Author.all
   end
 end
+
+# usage
+
+AuthorsWithoutBooksQuery.call
+AuthorsWithBooksQuery.call(min_book_count: 8)
 ```
 
 ```ruby
