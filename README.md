@@ -5,7 +5,8 @@ Our collection of guides, recipes and scripts for helping you get things done, b
 ## Table of Contents
 
 * [Guides](guides/)
-  - [Building API](guides/building_api.md)
+  - [Building an API](guides/building_api.md)
+  - [Building a simple HTTP Client](guides/building_simple_http_client.md)
   - [Code Style](guides/code_style.md)
   - [Coding Principles](guides/coding_principles.md)
   - [Error Handing](guides/error_handling.md)

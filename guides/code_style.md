@@ -21,7 +21,7 @@ We use a number of tools to enforce style compliance:
 First, you need to add the gems to your project's `Gemfile`:
 
 ```ruby
-group :development, :test do
+group :development do
   gem 'rubocop', require: false
   gem 'scss_lint', require: false
 end

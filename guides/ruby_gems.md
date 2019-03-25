@@ -31,9 +31,20 @@ Ruby Gems we recommend to use.
 
 * `formtastic`
 
+## File Uploading
+
+* [rails/activestorage](https://guides.rubyonrails.org/active_storage_overview.html)
+* [carrierwave](https://github.com/carrierwaveuploader/carrierwave) - Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks
+* [shrine](https://shrinerb.com) - File Attachment toolkit for Ruby applications
+
+## HTTP
+
+* [httparty](https://github.com/jnunemaker/httparty) - Makes http fun again. (See [Building simple HTTP Client](../guides/building_simple_http_client.md))
+
 ## Pagination
 
 * `kaminari`
+* [pagy](https://github.com/ddnexus/pagy) - The ultimate pagination ruby gem _(unless project does not have `kaminari` by default)_.
 
 ## Performance
 

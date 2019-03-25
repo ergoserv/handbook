@@ -8,7 +8,8 @@ Form Objects is a solution to handle and process custom requests with custom val
 
 * Forms go under the `app/forms` directory.
 * Form name should have suffix `Form` (e.g.: `app/services/CompanyRegistrationForm.rb` file will define `CompanyRegistrationForm`)
-* Form may incaplulate business logic for proccessing the request, but for complex cases it is better to concider separate class around the [Service Objects](guides/service_objects.md) layer.
+* Form may encapsulate business logic for processing the request, but for complex cases, it is better to consider separate class around the [Service Objects](../guides/service_objects.md) layer.
+* Form may have `populate` method where the logic of pre-filling form from a model or other sources can be defined.
 
 ## Example
 
@@ -43,6 +44,7 @@ class CompanyRegistrationForm
 end
 ```
 
-## Links
+## References
 
 * [ActiveModel Form Objects](https://thoughtbot.com/blog/activemodel-form-objects)
+* [Rectify / Form Objects](https://github.com/andypike/rectify#form-objects)
