@@ -57,6 +57,10 @@ Ruby Gems we recommend to use.
 * [pundit](https://github.com/varvet/pundit) - Minimal authorization through OO design and pure Ruby classes
 * [rolify](https://github.com/RolifyCommunity/rolify) - Advanced role management library with resource scoping
 
+## Push Notifications
+
+* [rpush](https://github.com/rpush/rpush) - The push notification service for Ruby.
+
 ## Search
 * [ransack](https://github.com/activerecord-hackery/ransack)
 
