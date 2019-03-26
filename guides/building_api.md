@@ -24,7 +24,7 @@ config.autoload_paths += Dir["#{Rails.root}/app/apis/**/"]
 
 ```
 apis/
-  app_v1_api/ - API for generic purpose (default)
+  app_v1_api/ - API for a generic purpose (default)
     resources/
       sessions_resource.rb
       users_resource.rb
@@ -112,12 +112,9 @@ module MobileV1API
 end
 ```
 
-## Gems
+## References
 
 * [grape](https://github.com/ruby-grape/grape)
 * [grape-entity](https://github.com/ruby-grape/grape-entity)
 * [grape-swagger-rails](https://github.com/ruby-grape/grape-swagger-rails)
-
-## References
-
 * [JSON:API](https://jsonapi.org) - A specification for building APIs in JSON.
