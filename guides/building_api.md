@@ -16,6 +16,12 @@ API is an important part of web applications. They provide interfaces for commun
 
 ### Directory Structure
 
+```ruby
+# config/application.rb
+config.paths.add 'app/apis', glob: '**/*.rb'
+config.autoload_paths += Dir["#{Rails.root}/app/apis/**/"]
+```
+
 ```
 apis/
   app_v1_api/ - API for generic purpose (default)
