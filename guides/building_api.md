@@ -7,10 +7,10 @@ API is an important part of web applications. They provide interfaces for commun
 ## Conventions
 
 * API files go under the `app/apis` directory.
-* API files go under a subdirectory named by API purpose + version (e.g. `mobile_v1`), even if there is only one API is foreseeing now.
+* API files go under a subdirectory named by API purpose + version (e.g. `v1_api`, `mobile_v1_api`), even if there is only one API is foreseeing now.
 * Each API module directory should contain `api.rb` and class `API` which defines configurations and mounts all needed resources and helpers for this API.
 * Each API subdirectory contains predefined directories (`resources/`, `entities/`, `helpers/`) to store corresponding classes.
-* Each API resource should be stored in separate file and class (e.g. `UsersAPI`, `OrdersAPI`, `RegistrationsAPI`, etc) and be inherited from `Grape::API.`
+* Each API resource should be stored in separate file and class (e.g. `UsersResource`, `OrdersResource`, `RegistrationsResource`, etc) and be inherited from `Grape::API.`
 * Entities are stored in `entities/` directory and be inherited from `Grape::Entity`. Entity name should correspond with the model it is related to (e.g.: `UserEntity`, `UserExtendedEntity`).
 
 
@@ -18,16 +18,21 @@ API is an important part of web applications. They provide interfaces for commun
 
 ```
 apis/
-  mobile_v1/ - API for mobile apps
+  v1_api/ - API for generic purpose (default)
     resources/
-      sessions_api.rb
+      sessions_resource.rb
+      users_resource.rb
     entities/
       user_entity.rb
     helpers/
-      application_api_helpers.rb
+      api_helpers.rb
+      users_api_helpers.rb
     api.rb
-  mobile_v2/ - API for mobile apps (version 2)
-  twilio_v1/ - API for webhooks and callbacks from Twilio
+  mobile_v1_api/ - API for mobile apps (version 1)
+   ...
+  mobile_v2_api/ - API for mobile apps (version 2)
+   ...
+  twilio_v1_api/ - API for webhooks and callbacks from Twilio
     resources/
     entities/
     helpers/
@@ -37,18 +42,19 @@ apis/
 ### Example Classes
 
 ```ruby
-# apis/mobile_v1/api.rb
-module MobileV1
+# apis/v1_api/api.rb
+module V1API
   class API < Grape::API
-    helpers MobileV1::ApplicationAPIHelpers
+    helpers V1API::APIHelpers
+    helpers V1API::UsersAPIHelpers
 
-    mount MobileV1::SessionsAPI
+    mount V1API::SessionsResource
   end
 end
 
-# apis/mobile_v1/resources/sessions_api.rb
-module MobileV1
-  class SessionsAPI < Grape::API
+# apis/v1_api/resources/sessions_resource.rb
+module V1API
+  class SessionsResource < Grape::API
     resource :sessions do
       desc 'Login user'
       params do
@@ -68,16 +74,34 @@ module MobileV1
   end
 end
 
-# apis/mobile_v1/helpers/application_api_helpers.rb
-module MobileV1
-  class ApplicationAPIHelpers
+# apis/v1_api/entities/user_entity.rb
+module V1API
+  class UserEntity < Grape::Entity
+    expose :email
   end
 end
 
-# apis/mobile_v1/entities/user_entity.rb
-module MobileV1
-  class UserEntity < Grape::Entity
-    expose :email
+# apis/v1_api/helpers/api_helpers.rb
+module V1API
+  class APIHelpers
+  end
+end
+
+# apis/v1_api/helpers/users_api_helpers.rb
+module V1API
+  class UsersAPIHelpers
+  end
+end
+
+## MobileV1API ##
+
+# apis/mobile_v1_api/api.rb
+module MobileV1API
+  class API < Grape::API
+    helpers MobileV1API::APIHelpers
+    helpers MobileV1API::UsersAPIHelpers
+
+    mount MobileV1API::SessionsResource
   end
 end
 ```
