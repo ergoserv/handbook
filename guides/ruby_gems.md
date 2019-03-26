@@ -42,6 +42,10 @@ See guide [Builing API](building_api.md).
 
 * [httparty](https://github.com/jnunemaker/httparty) - Makes http fun again. (See [Building simple HTTP Client](../guides/building_simple_http_client.md))
 
+## I18n & L10n
+
+* [i18n-js](https://github.com/fnando/i18n-js) - a small library to provide the I18n translations on the Javascript. It comes with Rails support.
+
 ## Pagination
 
 * [kaminari](https://github.com/kaminari/kaminari) - A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps.
