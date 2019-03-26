@@ -8,11 +8,12 @@ API is an important part of web applications. They provide interfaces for commun
 
 * API files go under the `app/apis` directory.
 * API files go under a subdirectory named by API purpose + version (e.g. `app_v1_api`, `mobile_v1_api`), even if there is only one API is foreseeing now.
-* Each API module directory should contain `api.rb` and class `API` which defines configurations and mounts all needed resources and helpers for this API.
+* Each API module directory should contain `api.rb` file with class `API` which defines configurations and mounts all needed resources and helpers for this API.
 * Each API subdirectory contains predefined directories (`resources/`, `entities/`, `helpers/`) to store corresponding classes.
-* Each API resource should be stored in separate file and class (e.g. `UsersResource`, `OrdersResource`, `RegistrationsResource`, etc) and be inherited from `Grape::API.`
-* Entities are stored in `entities/` directory and be inherited from `Grape::Entity`. Entity name should correspond with the model it is related to (e.g.: `UserEntity`, `UserExtendedEntity`).
-
+* Each API resource are stored in separate file (e.g. `UsersResource`, `OrdersResource`, `RegistrationsResource`, etc) and class which is inherited from `Grape::API.`
+* Each API resource class (e.g. `UsersResource`) defines a single resource (e.g. `resource :users do ... end`).
+* Entities are stored in `entities/` directory and inherited from `Grape::Entity` class.
+* Entity class name corresponds with the model it is related to (e.g. `UserEntity` for `User` model, `OrderEntity` for `Order` model).
 
 ### Directory Structure
 
@@ -90,12 +91,14 @@ end
 # apis/app_v1_api/helpers/api_helpers.rb
 module AppV1API
   class APIHelpers
+    # generic API helpers
   end
 end
 
 # apis/app_v1_api/helpers/users_api_helpers.rb
 module AppV1API
   class UsersAPIHelpers
+    # API helpers specific for user resource
   end
 end
 
