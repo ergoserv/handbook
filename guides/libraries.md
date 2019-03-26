@@ -1,6 +1,6 @@
-# Ruby Gems
+# Libraries
 
-Ruby Gems we recommend to use.
+Ruby Gems and other libraries we recommend to use.
 
 ## Administration
 

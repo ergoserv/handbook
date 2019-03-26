@@ -12,10 +12,10 @@ Our collection of guides, recipes and scripts for helping you get things done, b
   - [Error Handing](guides/error_handling.md)
   - [Form Objects](guides/form_objects.md)
   - [Git](guides/git.md)
+  - [Libraries](guides/libraries.md) - list of recommended Ruby Gems and other libraries.
   - [Models](guides/models.md)
   - [Policies](guides/policies.md)
   - [Query Objects](guides/query_objects.md)
-  - [Ruby Gems](guides/ruby_gems.md) - list of recommended Ruby Gems
   - [Service Objects](guides/service_objects.md)
   - [Services and Tools](guides/services_and_tools.md)
   - [Variables](guides/variables.md)
