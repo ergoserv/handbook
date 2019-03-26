@@ -7,7 +7,7 @@ API is an important part of web applications. They provide interfaces for commun
 ## Conventions
 
 * API files go under the `app/apis` directory.
-* API files go under a subdirectory named by API purpose + version (e.g. `v1_api`, `mobile_v1_api`), even if there is only one API is foreseeing now.
+* API files go under a subdirectory named by API purpose + version (e.g. `app_v1_api`, `mobile_v1_api`), even if there is only one API is foreseeing now.
 * Each API module directory should contain `api.rb` and class `API` which defines configurations and mounts all needed resources and helpers for this API.
 * Each API subdirectory contains predefined directories (`resources/`, `entities/`, `helpers/`) to store corresponding classes.
 * Each API resource should be stored in separate file and class (e.g. `UsersResource`, `OrdersResource`, `RegistrationsResource`, etc) and be inherited from `Grape::API.`
@@ -18,7 +18,7 @@ API is an important part of web applications. They provide interfaces for commun
 
 ```
 apis/
-  v1_api/ - API for generic purpose (default)
+  app_v1_api/ - API for generic purpose (default)
     resources/
       sessions_resource.rb
       users_resource.rb
@@ -42,18 +42,18 @@ apis/
 ### Example Classes
 
 ```ruby
-# apis/v1_api/api.rb
-module V1API
+# apis/app_v1_api/api.rb
+module AppV1API
   class API < Grape::API
-    helpers V1API::APIHelpers
-    helpers V1API::UsersAPIHelpers
+    helpers AppV1API::APIHelpers
+    helpers AppV1API::UsersAPIHelpers
 
-    mount V1API::SessionsResource
+    mount AppV1API::SessionsResource
   end
 end
 
-# apis/v1_api/resources/sessions_resource.rb
-module V1API
+# apis/app_v1_api/resources/sessions_resource.rb
+module AppV1API
   class SessionsResource < Grape::API
     resource :sessions do
       desc 'Login user'
@@ -74,21 +74,21 @@ module V1API
   end
 end
 
-# apis/v1_api/entities/user_entity.rb
-module V1API
+# apis/app_v1_api/entities/user_entity.rb
+module AppV1API
   class UserEntity < Grape::Entity
     expose :email
   end
 end
 
-# apis/v1_api/helpers/api_helpers.rb
-module V1API
+# apis/app_v1_api/helpers/api_helpers.rb
+module AppV1API
   class APIHelpers
   end
 end
 
-# apis/v1_api/helpers/users_api_helpers.rb
-module V1API
+# apis/app_v1_api/helpers/users_api_helpers.rb
+module AppV1API
   class UsersAPIHelpers
   end
 end
