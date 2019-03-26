@@ -8,28 +8,29 @@ Ruby Gems we recommend to use.
 
 ## API
 
-[Builing API](building_api.md)
+See guide [Builing API](building_api.md).
 
 * [grape](https://github.com/ruby-grape/grape)
 * [grape-entity](https://github.com/ruby-grape/grape-entity)
-* [grape-swagger-rails](https://github.com/ruby-grape/grape-swagger-rails)
+* [grape-swagger](https://github.com/ruby-grape/grape-swagger), [grape-swagger-rails](https://github.com/ruby-grape/grape-swagger-rails)
 
 ## Backgound Jobs
 
-* `sidekiq`
+* [sidekiq](https://github.com/mperham/sidekiq) - Simple, efficient background processing for Ruby
 
 ## Debugging
 
-* [table_print](http://tableprintgem.com/)
+* [pry](https://github.com/pry/pry), [pry-rails](https://github.com/rweng/pry-rails) - A runtime developer console and IRB alternative with powerful introspection capabilities.
+* [table_print](http://tableprintgem.com/) - TablePrint shows objects in nicely formatted columns for easy reading.
 
 ## Deployment
 
-* `capistrano`
+* [capistrano](https://github.com/capistrano/capistrano) - Remote multi-server automation tool.
 * [parity](https://github.com/thoughtbot/parity) - shell commands for development, staging, and production parity for Heroku apps
 
 ## Forms
 
-* `formtastic`
+* [formtastic](https://github.com/justinfrench/formtastic) - A Rails form builder plugin with semantically rich and accessible markup.
 
 ## File Uploading
 
@@ -43,14 +44,14 @@ Ruby Gems we recommend to use.
 
 ## Pagination
 
-* `kaminari`
+* [kaminari](https://github.com/kaminari/kaminari) - A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for Ruby webapps.
 * [pagy](https://github.com/ddnexus/pagy) - The ultimate pagination ruby gem _(unless project does not have `kaminari` by default)_.
 
 ## Performance
 
 * [bullet](https://github.com/flyerhzm/bullet)
-* [mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler)
-* `simplecov`
+* [mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler) - Profiler for your Ruby rack apps.
+* [simplecov](https://github.com/colszowka/simplecov) - Code coverage with a powerful configuration library.
 
 ## Policies & Roles
 
@@ -62,24 +63,25 @@ Ruby Gems we recommend to use.
 * [rpush](https://github.com/rpush/rpush) - The push notification service for Ruby.
 
 ## Search
-* [ransack](https://github.com/activerecord-hackery/ransack)
+
+* [ransack](https://github.com/activerecord-hackery/ransack) - Object-based searching.
 
 ## Security
 
-* [brakeman](https://brakemanscanner.org/)
+* [brakeman](https://brakemanscanner.org) - Brakeman is a free vulnerability scanner specifically designed for Ruby on Rails applications.
 
 ## Testing
-* [airborne](https://github.com/brooklynDev/airborne) - RSpec driven API testing framework
-* `capybara`
-* [factory_bot](https://github.com/thoughtbot/factory_bot) & [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)
-* `faker`
-* `rspec-rails`
-* `shoulda-matchers`
+* [airborne](https://github.com/brooklynDev/airborne) - RSpec driven API testing framework.
+* [capybara](https://github.com/teamcapybara/capybara) - Acceptance test framework for web applications.
+* [factory_bot](https://github.com/thoughtbot/factory_bot), [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails) - A library for setting up Ruby objects as test data.
+* [faker](https://github.com/stympy/faker) - A library for generating fake data such as names, addresses, and phone numbers.
+* [rspec](https://github.com/rspec/rspec), [rspec-rails](https://github.com/rspec/rspec-rails)
+* [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) - Simple one-liner tests for common Rails functionality.
 
 ## Uncategorized
 
-* `enumerize`
-* `inherited_resources`
-* `retriable`
-* `request_store`
-* `paper_trail`
+* [enumerize](https://github.com/brainspec/enumerize) - Enumerated attributes with I18n and ActiveRecord/Mongoid support.
+* [inherited_resources](https://github.com/activeadmin/inherited_resources) - Inherited Resources speeds up development by making your controllers inherit all restful actions so you just have to focus on what is important.
+* [retriable](https://github.com/kamui/retriable) - Retriable is an simple DSL to retry failed code blocks with randomized exponential backoff.
+* [request_store](https://github.com/steveklabnik/request_store) - Per-request global storage for Rack.
+* [paper_trail](https://github.com/paper-trail-gem/paper_trail) - Track changes to your Rails models.
