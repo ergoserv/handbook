@@ -18,7 +18,7 @@ API is an important part of web applications. They provide interfaces for commun
 
 ```
 apis/
-  mobile_v1/
+  mobile_v1/ - API for mobile apps
     resources/
       sessions_api.rb
     entities/
@@ -26,7 +26,8 @@ apis/
     helpers/
       application_api_helpers.rb
     api.rb
-  printing_v1
+  mobile_v2/ - API for mobile apps (version 2)
+  twilio_v1/ - API for webhooks and callbacks from Twilio
     resources/
     entities/
     helpers/
