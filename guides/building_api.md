@@ -10,18 +10,14 @@ API is an important part of web applications. They provide interfaces for commun
 * API files go under a subdirectory named by API purpose + version (e.g. `app_v1_api`, `mobile_v1_api`), even if there is only one API is foreseeing now.
 * Each API module directory should contain `api.rb` file with class `API` which defines configurations and mounts all needed resources and helpers for this API.
 * Each API subdirectory contains predefined directories (`resources/`, `entities/`, `helpers/`) to store corresponding classes.
-* Each API resource are stored in separate file (e.g. `UsersResource`, `OrdersResource`, `RegistrationsResource`, etc) and class which is inherited from `Grape::API.`
+* Each API resource are stored in separate file (e.g. `UsersResource`, `OrdersResource`, `RegistrationsResource`, etc) and class which is inherited from `Grape::API.`.
 * Each API resource class (e.g. `UsersResource`) defines a single resource (e.g. `resource :users do ... end`).
 * Entities are stored in `entities/` directory and inherited from `Grape::Entity` class.
+* Each API resource, entity class or helpers module class are wrapped into corresponding module (e.g. `AppV1API::Resources`, `AppV1API::Entities`, `AppV1API::Helpers`).
 * Entity class name corresponds with the model it is related to (e.g. `UserEntity` for `User` model, `OrderEntity` for `Order` model).
+* Specs directory structure follows same directory names (e.g. `spec/apis/app_v1_api/`, `spec/apis/mobile_v1_api/`).
 
 ### Directory Structure
-
-```ruby
-# config/application.rb
-config.paths.add 'app/apis', glob: '**/*.rb'
-config.autoload_paths += Dir["#{Rails.root}/app/apis/**/"]
-```
 
 ```
 apis/
@@ -44,23 +40,30 @@ apis/
     entities/
     helpers/
     api.rb
+spec/
+  apis/
+    app_v1_api/
+      sessions_resource_spec.rb
+    twilio_v1_api/
 ```
 
 ### Example Classes
 
 ```ruby
+## AppV1API ##
+
 # apis/app_v1_api/api.rb
 module AppV1API
   class API < Grape::API
-    helpers AppV1API::APIHelpers
-    helpers AppV1API::UsersAPIHelpers
+    helpers Helpers::APIHelpers
+    helpers Helpers::UsersAPIHelpers
 
-    mount AppV1API::SessionsResource
+    mount Resources::SessionsResource
   end
 end
 
 # apis/app_v1_api/resources/sessions_resource.rb
-module AppV1API
+module AppV1API::Resources
   class SessionsResource < Grape::API
     resource :sessions do
       desc 'Login user'
@@ -70,7 +73,8 @@ module AppV1API
       end
       post do
         # login user
-        present user, with: UserEntity
+        present user,
+          with: ApiV1API::Entities::UserEntity
       end
 
       desc 'Logout user'
@@ -82,23 +86,36 @@ module AppV1API
 end
 
 # apis/app_v1_api/entities/user_entity.rb
-module AppV1API
+module AppV1API::Entities
   class UserEntity < Grape::Entity
     expose :email
   end
 end
 
 # apis/app_v1_api/helpers/api_helpers.rb
-module AppV1API
+module AppV1API::Helpers
   class APIHelpers
     # generic API helpers
   end
 end
 
 # apis/app_v1_api/helpers/users_api_helpers.rb
-module AppV1API
+module AppV1API::Helpers
   class UsersAPIHelpers
     # API helpers specific for user resource
+  end
+end
+
+# spec/apis/app_v1_api/sessions_resource_spec.rb
+require 'rails_helper'
+
+describe 'AppV1API::Resources::SessionsResource', type: :request do
+  describe 'POST /api/v1/sessions' do
+    # ...
+  end
+
+  describe 'DELETE /api/v1/sessions' do
+    # ...
   end
 end
 
@@ -107,10 +124,10 @@ end
 # apis/mobile_v1_api/api.rb
 module MobileV1API
   class API < Grape::API
-    helpers MobileV1API::APIHelpers
-    helpers MobileV1API::UsersAPIHelpers
+    helpers Helpers::APIHelpers
+    helpers Helpers::UsersAPIHelpers
 
-    mount MobileV1API::SessionsResource
+    mount Resources::SessionsResource
   end
 end
 ```
