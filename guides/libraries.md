@@ -20,6 +20,7 @@ See guide [Builing API](building_api.md).
 
 ## Debugging
 
+* [httplog](https://github.com/trusche/httplog) - Log outgoing HTTP requests in ruby.
 * [pry](https://github.com/pry/pry), [pry-rails](https://github.com/rweng/pry-rails) - A runtime developer console and IRB alternative with powerful introspection capabilities.
 * [table_print](http://tableprintgem.com/) - TablePrint shows objects in nicely formatted columns for easy reading.
 
