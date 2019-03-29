@@ -4,6 +4,7 @@ Collection of useful services and tools.
 
 ## API and Webhooks
 
+* [httpstatuses.com](https://httpstatuses.com) - HTTP Status Codes is an easy to reference database of HTTP Status Codes with their definitions and helpful code references all in one place.
 * [requestbin.com](https://requestbin.com) - A modern request bin to inspect HTTP events
 * [postb.in](https://postb.in) - Programatically Test your API Clients or Webhooks
 * [mockbin.org](https://mockbin.org) - Mockbin allows you to generate custom endpoints to test, mock, and track HTTP requests & responses between libraries, sockets and APIs.
