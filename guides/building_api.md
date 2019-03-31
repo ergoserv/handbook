@@ -28,8 +28,8 @@ apis/
     entities/
       user_entity.rb
     helpers/
-      api_helpers.rb
-      users_api_helpers.rb
+      api_helper.rb
+      users_api_helper.rb
     api.rb
   mobile_v1_api/ - API for mobile apps (version 1)
    ...
@@ -55,8 +55,8 @@ spec/
 # apis/app_v1_api/api.rb
 module AppV1API
   class API < Grape::API
-    helpers Helpers::APIHelpers
-    helpers Helpers::UsersAPIHelpers
+    helpers Helpers::APIHelper
+    helpers Helpers::UsersAPIHelper
 
     mount Resources::SessionsResource
   end
@@ -92,16 +92,16 @@ module AppV1API::Entities
   end
 end
 
-# apis/app_v1_api/helpers/api_helpers.rb
+# apis/app_v1_api/helpers/api_helper.rb
 module AppV1API::Helpers
-  class APIHelpers
+  class APIHelper
     # generic API helpers
   end
 end
 
-# apis/app_v1_api/helpers/users_api_helpers.rb
+# apis/app_v1_api/helpers/users_api_helper.rb
 module AppV1API::Helpers
-  class UsersAPIHelpers
+  class UsersAPIHelper
     # API helpers specific for user resource
   end
 end
@@ -124,8 +124,8 @@ end
 # apis/mobile_v1_api/api.rb
 module MobileV1API
   class API < Grape::API
-    helpers Helpers::APIHelpers
-    helpers Helpers::UsersAPIHelpers
+    helpers Helpers::APIHelper
+    helpers Helpers::UsersAPIHelper
 
     mount Resources::SessionsResource
   end
