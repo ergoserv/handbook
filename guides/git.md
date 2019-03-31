@@ -96,6 +96,7 @@ $ git config --global user.email johndoe@ergoserv.com
 ## References
 * [Git Book](https://git-scm.com/book/en/v2)
 * [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
+* [5 Useful Tips For A Better Commit Message](https://thoughtbot.com/blog/5-useful-tips-for-a-better-commit-message)
 * [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
 * [git-flow cheatsheet](http://danielkummer.github.io/git-flow-cheatsheet/)
 * [Git-flow Cheat Sheet by MrManny](https://www.cheatography.com/mrmanny/cheat-sheets/git-flow/)
