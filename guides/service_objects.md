@@ -21,12 +21,15 @@ You have taks to render user's photos. User have 3 sources of photos - Facebook,
 ```ruby
 # app/service/gallery_service.rb
 module GalleryService
-  class << self
-    def photos(user, repository_name)
-      repository_class = 
-        "GalleryService::#{repository_name.camelize}Repository".constantize
-      repository_class.new(user: user).all
+  def self.photos(user, repository_name)
+    repository_class =
+      "GalleryService::#{repository_name.to_s.camelize}Repository".constantize
+
+    repository = repository_class.new(user: user)
+    unless repository.connected?
+      repository = EmptyRepository.new(user: user)
     end
+    repository.fetch_all
   end
 end
 
@@ -52,7 +55,11 @@ module GalleryService
       @user = user
     end
 
-    def all
+    def connected?
+      raise NotImplementedError
+    end
+
+    def fetch_all
       raise NotImplementedError
     end
   end
@@ -61,22 +68,39 @@ end
 # app/service/gallery_service/database_repository.rb
 module GalleryService
   class DatabaseRepository < AbstractRepository
-    def all
-      photos = Pundit.policy_scope(user, Picture)
+    def connected?
+      Picture.connected? # ActiveRecord::Base.connected?
+    end
+
+    def fetch_all
+      photos = user.pictures
 
       photos.map do |photo|
         PhotoStruct.new(
           uid: photo.id,
           repository: :database,
-          url: build_url(photo),
+          url: build_photo_path(photo),
         )
       end
     end
 
     private
 
-    def build_url(photo)
+    def build_photo_path(photo)
       # ...
+    end
+  end
+end
+
+# app/service/gallery_service/empty_repository.rb
+module GalleryService
+  class EmptyRepository < AbstractRepository
+    def connected?
+      true
+    end
+
+    def fetch_all
+      []
     end
   end
 end
@@ -84,7 +108,11 @@ end
 # app/service/gallery_service/facebook_repository.rb
 module GalleryService
   class FacebookRepository < AbstractRepository
-    def all
+    def connected?
+      user.facebook_connected?
+    end
+
+    def fetch_all
       photos = facebook_service.photos
 
       photos.map do |photo|
@@ -99,7 +127,7 @@ module GalleryService
     private
 
     def facebook_service
-      if !user.facebook_connected?
+      unless connected?
         raise Error, "Facebook is not connected for user #{user}"
       end
 
@@ -111,7 +139,11 @@ end
 # app/service/gallery_service/instagram_repository.rb
 module GalleryService
   class InstagramRepository < AbstractRepository
-    def all
+    def connected?
+      user.instagram_connected?
+    end
+
+    def fetch_all
       photos = instagram_service.photos
 
       photos.map do |photo|
@@ -126,8 +158,8 @@ module GalleryService
     private
 
     def instagram_service
-      if !user.instagram_connected?
-        raise Error,  "Instagram is not connected for user #{user}" 
+      unless connected?
+        raise Error, "Instagram is not connected for user #{user}"
       end
 
       @instagram_service ||= InstagramService.new(user.instagram_token)
