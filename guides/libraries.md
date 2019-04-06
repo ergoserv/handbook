@@ -18,6 +18,10 @@ See guide [Builing API](building_api.md).
 
 * [sidekiq](https://github.com/mperham/sidekiq) - Simple, efficient background processing for Ruby
 
+## Configuration
+
+* [dotenv](https://github.com/bkeepers/dotenv) - A Ruby gem to load environment variables from `.env`.
+
 ## Debugging
 
 * [httplog](https://github.com/trusche/httplog) - Log outgoing HTTP requests in ruby.
