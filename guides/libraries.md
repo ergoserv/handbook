@@ -45,7 +45,7 @@ See guide [Builing API](building_api.md).
 
 ## HTTP
 
-* [httparty](https://github.com/jnunemaker/httparty) - Makes http fun again. (See [Building simple HTTP Client](../guides/building_simple_http_client.md))
+* [httparty](https://github.com/jnunemaker/httparty) - Makes http fun again. (See guide [Building simple HTTP Client](../guides/building_simple_http_client.md))
 
 ## I18n & L10n
 
@@ -60,7 +60,6 @@ See guide [Builing API](building_api.md).
 
 * [bullet](https://github.com/flyerhzm/bullet)
 * [mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler) - Profiler for your Ruby rack apps.
-* [simplecov](https://github.com/colszowka/simplecov) - Code coverage with a powerful configuration library.
 
 ## Policies & Roles
 
@@ -80,11 +79,15 @@ See guide [Builing API](building_api.md).
 * [brakeman](https://brakemanscanner.org) - Brakeman is a free vulnerability scanner specifically designed for Ruby on Rails applications.
 
 ## Testing
+
+See guide [Testing](testing.md).
+
 * [airborne](https://github.com/brooklynDev/airborne) - RSpec driven API testing framework.
 * [capybara](https://github.com/teamcapybara/capybara) - Acceptance test framework for web applications.
 * [factory_bot](https://github.com/thoughtbot/factory_bot), [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails) - A library for setting up Ruby objects as test data.
 * [faker](https://github.com/stympy/faker) - A library for generating fake data such as names, addresses, and phone numbers.
-* [rspec](https://github.com/rspec/rspec), [rspec-rails](https://github.com/rspec/rspec-rails)
+* [rspec](https://github.com/rspec/rspec), [rspec-rails](https://github.com/rspec/rspec-rails) - Behaviour Driven Development for Ruby.
+* [simplecov](https://github.com/colszowka/simplecov) - Code coverage with a powerful configuration library.
 * [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) - Simple one-liner tests for common Rails functionality.
 
 ## Uncategorized

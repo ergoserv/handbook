@@ -18,6 +18,7 @@ Our collection of guides, recipes and scripts for helping you get things done, b
   - [Query Objects](guides/query_objects.md)
   - [Service Objects](guides/service_objects.md)
   - [Services and Tools](guides/services_and_tools.md)
+  - [Testing](guides/testing.md)
   - [Variables](guides/variables.md)
   - [Vocabulary](guides/vocabulary.md)
 * [Templates](templates/)
