@@ -5,12 +5,12 @@
 * *Consistency* - Keep variable names, structures, approaches, styles same across the whole project.
 * *Least astonishment* - Make your code, UI, UX unsurprising
 * *Keep It Simple (KISS)* - The simpler your code is, the easier it is to construct and maintain.
-* *You Aren’t Gonna Need It (YAGNI)*
+* *You Aren’t Gonna Need It (YAGNI)* - Do not add functionality until deemed necessary.
 * *Don’t Repeat Yourself (DRY)* - Remember, OverDRYing may break KISS principles. Sometimes, readability and clearness are better than complexity.
 * *Validate your data* - Any incoming data should be validated and/or filtered.
 * *Always Test Your Code*
 
-## Links
+## References
 
 * [Best coding practices](https://en.wikipedia.org/wiki/Best_coding_practices)
 * [Principle of least astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)

@@ -4,11 +4,9 @@ The following is a base template for an ActiveRecord model `Customer`.
 
 ## Key Points
 
-  * Avoid ActiveRecord callbacks where possible, prefer Service Objects architecture to store any business
-
-  * Order associations, scopes and validations alphabetically
-
-  * Aim to remove business logic that is not directly related to reading from or writing to the database
+* Avoid ActiveRecord callbacks where possible, prefer Service Objects architecture to store any business
+* Order associations, scopes and validations alphabetically
+* Aim to remove business logic that is not directly related to reading from or writing to the database
 
 ## Template
 
