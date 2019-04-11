@@ -86,6 +86,8 @@ fixed ActiveModel::Errors deprecation messages failing when AR was used outside 
 
 ## Configuration
 
+* [Getting Started - First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+
 ### Configure Your Identity
 
 ```
