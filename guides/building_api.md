@@ -134,7 +134,6 @@ end
 
 ## References
 
-* [grape](https://github.com/ruby-grape/grape)
-* [grape-entity](https://github.com/ruby-grape/grape-entity)
-* [grape-swagger-rails](https://github.com/ruby-grape/grape-swagger-rails)
-* [JSON:API](https://jsonapi.org) - A specification for building APIs in JSON.
+* [Gems for APIs](libraries.md#api) - ErgoServ's list of recommended gems.
+* [httpstatuses.com](https://httpstatuses.com) - HTTP Status Codes is an easy to reference database of HTTP Status Codes with their definitions and helpful code references all in one place.
+* [JSON:API](https://jsonapi.org) - A specification for building advanced APIs in JSON.
