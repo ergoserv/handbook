@@ -16,7 +16,7 @@ See guide [Builing API](building_api.md).
 
 ## Backgound Jobs
 
-* [sidekiq](https://github.com/mperham/sidekiq) - Simple, efficient background processing for Ruby
+* [sidekiq](https://github.com/mperham/sidekiq) - Simple, efficient background processing for Ruby.
 
 ## Configuration
 
@@ -31,7 +31,7 @@ See guide [Builing API](building_api.md).
 ## Deployment
 
 * [capistrano](https://github.com/capistrano/capistrano) - Remote multi-server automation tool.
-* [parity](https://github.com/thoughtbot/parity) - shell commands for development, staging, and production parity for Heroku apps
+* [parity](https://github.com/thoughtbot/parity) - shell commands for development, staging, and production parity for Heroku apps.
 
 ## Forms
 
@@ -40,12 +40,12 @@ See guide [Builing API](building_api.md).
 ## File Uploading
 
 * [rails/activestorage](https://guides.rubyonrails.org/active_storage_overview.html)
-* [carrierwave](https://github.com/carrierwaveuploader/carrierwave) - Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks
-* [shrine](https://shrinerb.com) - File Attachment toolkit for Ruby applications
+* [carrierwave](https://github.com/carrierwaveuploader/carrierwave) - Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks.
+* [shrine](https://shrinerb.com) - File Attachment toolkit for Ruby applications.
 
 ## HTTP
 
-* [httparty](https://github.com/jnunemaker/httparty) - Makes http fun again. (See guide [Building simple HTTP Client](../guides/building_simple_http_client.md))
+* [httparty](https://github.com/jnunemaker/httparty) - Makes http fun again. (See guide [Building simple HTTP Client](../guides/building_simple_http_client.md)).
 
 ## I18n & L10n
 
@@ -63,8 +63,8 @@ See guide [Builing API](building_api.md).
 
 ## Policies & Roles
 
-* [pundit](https://github.com/varvet/pundit) - Minimal authorization through OO design and pure Ruby classes
-* [rolify](https://github.com/RolifyCommunity/rolify) - Advanced role management library with resource scoping
+* [pundit](https://github.com/varvet/pundit) - Minimal authorization through OO design and pure Ruby classes.
+* [rolify](https://github.com/RolifyCommunity/rolify) - Advanced role management library with resource scoping.
 
 ## Push Notifications
 
