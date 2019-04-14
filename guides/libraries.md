@@ -58,7 +58,7 @@ See guide [Builing API](building_api.md).
 
 ## Performance
 
-* [bullet](https://github.com/flyerhzm/bullet)
+* [bullet](https://github.com/flyerhzm/bullet) - Helps to kill N+1 queries and unused eager loading.
 * [mini-profiler](https://github.com/MiniProfiler/rack-mini-profiler) - Profiler for your Ruby rack apps.
 
 ## Policies & Roles
@@ -89,11 +89,13 @@ See guide [Testing](testing.md).
 * [rspec](https://github.com/rspec/rspec), [rspec-rails](https://github.com/rspec/rspec-rails) - Behaviour Driven Development for Ruby.
 * [simplecov](https://github.com/colszowka/simplecov) - Code coverage with a powerful configuration library.
 * [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) - Simple one-liner tests for common Rails functionality.
+* [undercover](https://github.com/grodowski/undercover) - Actionable code coverage - detects untested code blocks in recent changes.
 
 ## Uncategorized
 
 * [enumerize](https://github.com/brainspec/enumerize) - Enumerated attributes with I18n and ActiveRecord/Mongoid support.
 * [inherited_resources](https://github.com/activeadmin/inherited_resources) - Inherited Resources speeds up development by making your controllers inherit all restful actions so you just have to focus on what is important.
+* [overcommit](https://github.com/brigade/overcommit) - A fully configurable and extendable Git hook manager.
 * [retriable](https://github.com/kamui/retriable) - Retriable is an simple DSL to retry failed code blocks with randomized exponential backoff.
 * [request_store](https://github.com/steveklabnik/request_store) - Per-request global storage for Rack.
 * [paper_trail](https://github.com/paper-trail-gem/paper_trail) - Track changes to your Rails models.
