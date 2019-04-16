@@ -1,8 +1,19 @@
 # Testing
 
+We use [RSpec](https://rspec.info) framework for testing and
+follow recommendations provided by [Better Specs](http://www.betterspecs.org).
+
 ## Factories
 
-* Base factory should define only required an mandatory fields
+* Base factory should define only required and mandatory fields
+
+## Code Style
+
+```ruby
+# Multiline `expect`
+expect { true }
+  .not_to(change { false })
+```
 
 ## References
 
