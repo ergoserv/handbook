@@ -38,3 +38,9 @@ The following is a list of configuration files you're encouraged to use in a new
 
 These files should go into your project's root directory.
 `.rubocop_ergoserv.yml` - should not be modified in order to be able to be updated it when needed.
+
+## References
+
+* [The Ruby Style Guide](https://github.com/rubocop-hq/ruby-style-guide)
+* [The Rails Style Guide](https://github.com/rubocop-hq/rails-style-guide)
+* [The RSpec Style Guide](https://github.com/rubocop-hq/rspec-style-guide)

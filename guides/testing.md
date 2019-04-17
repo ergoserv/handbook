@@ -19,3 +19,4 @@ expect { true }
 
 * [Better Specs](http://www.betterspecs.org)
 * [Gems for Testing](libraries.md#testing)
+* [The RSpec Style Guide](https://github.com/rubocop-hq/rspec-style-guide)
