@@ -43,8 +43,11 @@ apis/
 spec/
   apis/
     app_v1_api/
-      sessions_resource_spec.rb
+      resources/
+        sessions_resource_spec.rb
     twilio_v1_api/
+      resources/
+        *_resource_spec.rb
 ```
 
 ### Example Classes
@@ -106,10 +109,10 @@ module AppV1API::Helpers
   end
 end
 
-# spec/apis/app_v1_api/sessions_resource_spec.rb
+# spec/apis/app_v1_api/resources/sessions_resource_spec.rb
 require 'rails_helper'
 
-describe 'AppV1API::Resources::SessionsResource', type: :request do
+describe AppV1API::Resources::SessionsResource, type: :request do
   describe 'POST /api/v1/sessions' do
     # ...
   end
