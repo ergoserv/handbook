@@ -55,6 +55,13 @@ expect { true }
   .not_to(change { false })
 ```
 
+### Views
+
+* Place application-wide partials to the `app/views/application/` directory, leaving layout-only partials (like `_header`, `_sidebar`, etc) in the `app/views/layouts/` directory.
+* Place layout partials to separate directories (e.g. `app/views/layouts/application/`, `app/views/layouts/landing/`, etc).
+* Don't use `()` in views for first-level helpers (e.g. `image_tag 'image.jpg`, `link_to 'Profile', user_path(user)`).
+* Avoid direct calls of object or class methods in views, but if you still need to, then use `()` for arguments (e.g. `User.human_attribute_name(:name)`).
+
 ## References
 
 * [The Ruby Style Guide](https://github.com/rubocop-hq/ruby-style-guide)
