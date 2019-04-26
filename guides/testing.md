@@ -7,16 +7,9 @@ follow recommendations provided by [Better Specs](http://www.betterspecs.org).
 
 * Base factory should define only required and mandatory fields
 
-## Code Style
-
-```ruby
-# Multiline `expect`
-expect { true }
-  .not_to(change { false })
-```
-
 ## References
 
 * [Better Specs](http://www.betterspecs.org)
+* [Code Style for RSpec](code_style.md#testing--rspec)
 * [Gems for Testing](libraries.md#testing)
 * [The RSpec Style Guide](https://github.com/rubocop-hq/rspec-style-guide)

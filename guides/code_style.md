@@ -41,6 +41,20 @@ These files should go into your project's root directory.
 
 Also, you can install and use our gem [`auxiliary_rails`](https://github.com/ergoserv/auxiliary_rails) to generate these configs.
 
+## Conventions and Recommendations
+
+* [Models](models.md)
+* [Variables](variables.md)
+
+### Testing / RSpec
+
+#### Multiline `expect`
+
+```
+expect { true }
+  .not_to(change { false })
+```
+
 ## References
 
 * [The Ruby Style Guide](https://github.com/rubocop-hq/ruby-style-guide)
