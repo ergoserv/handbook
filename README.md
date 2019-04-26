@@ -22,7 +22,6 @@ Our collection of guides, recipes and scripts for helping you get things done, b
   - [Variables](guides/variables.md)
   - [Vocabulary](guides/vocabulary.md)
 * [Templates](templates/)
-    - [Rubocop Configs](templates/rubocop)
 
 ### Inspired by
 
