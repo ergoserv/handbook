@@ -15,15 +15,15 @@ on the team is comfortable with any adjustments you make.
 
 We use a number of tools to enforce style compliance:
 
-  * Rubocop, for Ruby lints
-  * SCSS Lint, for SCSS lints
+  * RuboCop, for Ruby lints
+  * RuboCop RSpec, for RSpec lints
 
 First, you need to add the gems to your project's `Gemfile`:
 
 ```ruby
 group :development do
   gem 'rubocop', require: false
-  gem 'scss_lint', require: false
+  gem 'rubocop-rspec', require: false
 end
 ```
 
@@ -33,11 +33,13 @@ Then you need to add some configs that implement our styles.
 
 The following is a list of configuration files you're encouraged to use in a new project:
 
-* [.rubocop.yml](https://github.com/ergoserv/handbook/blob/master/templates/rubocop/.rubocop.yml)
-* [.rubocop_ergoserv.yml](https://github.com/ergoserv/handbook/blob/master/templates/rubocop/.rubocop_ergoserv.yml)
+* [rubocop_template.yml](https://github.com/ergoserv/auxiliary_rails/blob/master/lib/generators/auxiliary_rails/templates/rubocop/rubocop_template.yml) -> `.rubocop.yml`
+* [rubocop_auxiliary_rails_template.yml](https://github.com/ergoserv/auxiliary_rails/blob/master/lib/generators/auxiliary_rails/templates/rubocop/rubocop_auxiliary_rails_template.yml) -> `.rubocop_auxiliary_rails.yml`
 
 These files should go into your project's root directory.
-`.rubocop_ergoserv.yml` - should not be modified in order to be able to be updated it when needed.
+`.rubocop_auxiliary_rails.yml` - should not be modified in order to be able to be updated it when needed.
+
+Also, you can install and use our gem [`auxiliary_rails`](https://github.com/ergoserv/auxiliary_rails) to generate these configs.
 
 ## References
 
