@@ -46,6 +46,21 @@ Also, you can install and use our gem [`auxiliary_rails`](https://github.com/erg
 * [Models](models.md)
 * [Variables](variables.md)
 
+### General
+
+* Be positive where possible (prefer `if` over `unless`, `except:` → `only:`, etc).
+
+### Controllers
+
+* Avoid using callbacks for setting instance variables. Use them only for changing the application flow, such as redirecting if a user is not authenticated.
+
+### Databases
+
+* Name date columns with `_on` suffixes.
+* Name datetime columns with `_at` suffixes.
+* Name time columns (referring to a time of day with no date) with `_time` suffixes.
+* Don't change a migration after it has been merged into master if the desired change can be solved with another migration.
+
 ### Testing / RSpec
 
 #### Multiline `expect`
