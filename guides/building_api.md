@@ -135,6 +135,28 @@ module MobileV1API
 end
 ```
 
+## HTTP headers and status codes
+
+Some of the more commonly used HTTP status codes are:
+
+#### Success codes
+
+* `200 OK` — request has succeeded.
+* `201 Created` — new resource has been created.
+* `204 No Content` — no content needs to be returned (e.g. when deleting a resource).
+
+#### Client error codes
+
+* `400 Bad Request` — request is malformed in some way (e.g. wrong formatting of JSON, invalid request params, etc).
+* `401 Unauthorized` — authentication failed (valid credentials are required).
+* `403 Forbidden` — authorization failed (client/user is authenticated but does not have permissions for the requested resource or action).
+* `404 Not Found` — resource could not be found.
+* `422 Unprocessable Entity` — resource hasn't be saved (e.g. validations on the resource failed) or action can't be performed.
+
+#### Server error codes
+
+* `500 Internal Server Error` — something exploded in your application.
+
 ## References
 
 * [Gems for APIs](libraries.md#api) - ErgoServ's list of recommended gems.
