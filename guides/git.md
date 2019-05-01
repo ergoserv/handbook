@@ -65,7 +65,7 @@ Format: `vX.X.X` where `X.X.X` is version following [Semantic Versioning](https:
 
 ## Commits
 
-* Each commit should be a single *logical change*. Don't make *logical changes* in one commit. For example, if a patch fixes a bug and optimizes the performance of a feature, split it into two separate commits.
+* Each commit should be a single *logical change*. Don't make several *logical changes* in one commit. For example, if a patch fixes a bug and optimizes the performance of a feature, split it into two separate commits.
 * Don't split a single *logical change* into several commits. For example, the implementation of a feature and the corresponding tests should be in the same commit.
 * Commit *early* and *often*. Small, self-contained commits are easier to understand and revert when something goes wrong.
 * Commits should be ordered *logically*. For example, if *commit X* depends on changes done in *commit Y*, then *commit Y* should come before *commit X*.
@@ -104,3 +104,6 @@ $ git config --global user.email johndoe@ergoserv.com
 * [git-flow cheatsheet](http://danielkummer.github.io/git-flow-cheatsheet/)
 * [Git-flow Cheat Sheet by MrManny](https://www.cheatography.com/mrmanny/cheat-sheets/git-flow/)
 * [Semantic Versioning](https://semver.org/)
+* [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/)
+* [Commit messages guide](https://github.com/RomuloOliveira/commit-messages-guide)
+* [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing)
