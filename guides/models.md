@@ -7,6 +7,9 @@ The following is a base template for an ActiveRecord model `Customer`.
 * Avoid ActiveRecord callbacks where possible, prefer Service Objects architecture to store any business
 * Order associations, scopes and validations alphabetically
 * Aim to remove business logic that is not directly related to reading from or writing to the database
+* `Scopes` vs `Class methods`. Use scopes when the logic is very small, for simple where/order clauses,
+    and class methods when it involves a bit more complexity.
+* Lets DRY our code. Use special concerns to avoid duplicating.
 
 ## Template
 
@@ -75,6 +78,22 @@ class Customer < ActiveRecord::Base
 
   def calculate_age(dob:)
     # some calculation
+  end
+end
+
+# app/models/concerns/commentable
+module Commentable
+  # Concern should be named with `able` prefix
+  extend ActiveSupport::Concern
+  # EXTENDing is required
+
+  included do
+    # For associations
+    has_many :comments, as: :author, class_name: 'Comment'
+  end
+
+  def method_name
+    # Some code
   end
 end
 ```
