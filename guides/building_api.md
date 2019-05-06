@@ -14,6 +14,7 @@ API is an important part of web applications. They provide interfaces for commun
 * Each API resource class (e.g. `UsersResource`) defines a single resource (e.g. `resource :users do ... end`).
 * Entities are stored in `entities/` directory and inherited from `Grape::Entity` class.
 * Each API resource, entity class or helpers module class are wrapped into corresponding module (e.g. `AppV1API::Resources`, `AppV1API::Entities`, `AppV1API::Helpers`).
+* For duplicate params across the project use special `SharedParamsHelper` helper.
 * Entity class name corresponds with the model it is related to (e.g. `UserEntity` for `User` model, `OrderEntity` for `Order` model).
 * Specs directory structure follows same directory names (e.g. `spec/apis/app_v1_api/`, `spec/apis/mobile_v1_api/`).
 
@@ -30,6 +31,7 @@ apis/
     helpers/
       api_helper.rb
       users_api_helper.rb
+      shared_params_helper.rb
     api.rb
   mobile_v1_api/ - API for mobile apps (version 1)
    ...
@@ -108,6 +110,28 @@ module AppV1API::Helpers
     # API helpers specific for user resource
   end
 end
+
+# apis/app_v1_api/helpers/shared_params_helper.rb
+module AppV1API::Helpers
+  module SharedParamsHelper
+    extend Grape::API::Helpers
+
+    params :user do
+      # List of API params, for reusing
+    end
+  end
+end
+
+module AppV1API::Resources
+  class UsersResource < Grape::API
+    helpers AppV1API::Helpers::SharedParamsHelper
+
+    resource :user do
+      params do
+        use :user # Call `params` which set at SharedParamsHelper
+      end
+    end
+  end
 
 # spec/apis/app_v1_api/resources/sessions_resource_spec.rb
 require 'rails_helper'
