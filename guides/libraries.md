@@ -99,3 +99,7 @@ See guide [Testing](testing.md).
 * [retriable](https://github.com/kamui/retriable) - Retriable is an simple DSL to retry failed code blocks with randomized exponential backoff.
 * [request_store](https://github.com/steveklabnik/request_store) - Per-request global storage for Rack.
 * [paper_trail](https://github.com/paper-trail-gem/paper_trail) - Track changes to your Rails models.
+
+## Views
+
+* [loaf](https://github.com/piotrmurach/loaf) - Manages and displays breadcrumb trails in Rails app - lean & mean.
