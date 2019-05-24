@@ -48,11 +48,17 @@ Also, you can install and use our gem [`auxiliary_rails`](https://github.com/erg
 
 ### General
 
-* Be positive where possible (prefer `if` over `unless`, `except:` → `only:`, etc).
+* Be positive where possible. Prefer `if` over `unless`, `only:` over `except:` (e.g. `if var.present?` is better than `unless var.blank?`).
+* Use alphabetic order where and if possible (definitions, keys, translations).
+
+### Configurations
+
+* Name initializers according to the name of their gem.
 
 ### Controllers
 
 * Avoid using callbacks for setting instance variables. Use them only for changing the application flow, such as redirecting if a user is not authenticated.
+* Use `private` instead of `protected` when defining controller methods.
 
 ### Databases
 
@@ -76,6 +82,7 @@ expect { true }
 * Place layout partials to separate directories (e.g. `app/views/layouts/application/`, `app/views/layouts/landing/`, etc).
 * Don't use `()` in views for first-level helpers (e.g. `image_tag 'image.jpg`, `link_to 'Profile', user_path(user)`).
 * Avoid direct calls of object or class methods in views, but if you still need to, then use `()` for arguments (e.g. `User.human_attribute_name(:name)`).
+* Avoid using instance variables (`@var`) in partials. Pass local variables to partials from view templates.
 
 ## References
 
