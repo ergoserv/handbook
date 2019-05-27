@@ -5,6 +5,7 @@ Our collection of guides, recipes and scripts for helping you get things done, b
 ## Table of Contents
 
 * [Guides](guides/)
+  - [ActiveAdmin](guides/activeadmin.md)
   - [Building an API](guides/building_api.md)
   - [Building a simple HTTP Client](guides/building_simple_http_client.md)
   - [Code Style](guides/code_style.md)
