@@ -7,48 +7,67 @@ API is an important part of web applications. They provide interfaces for commun
 ## Conventions
 
 * API files go under the `app/apis` directory.
-* API files go under a subdirectory named by API purpose + version (e.g. `mobile_v1`), even if there is only one API is foreseeing now.
-* Each API module directory should contain `api.rb` and class `API` which defines configurations and mounts all needed resources and helpers for this API.
+* API files go under a subdirectory named by API purpose + version (e.g. `app_v1_api`, `mobile_v1_api`), even if there is only one API is foreseeing now.
+* Each API module directory should contain `api.rb` file with class `API` which defines configurations and mounts all needed resources and helpers for this API.
 * Each API subdirectory contains predefined directories (`resources/`, `entities/`, `helpers/`) to store corresponding classes.
-* Each API resource should be stored in separate file and class (e.g. `UsersAPI`, `OrdersAPI`, `RegistrationsAPI`, etc) and be inherited from `Grape::API.`
-* Entities are stored in `entities/` directory and be inherited from `Grape::Entity`. Entity name should correspond with the model it is related to (e.g.: `UserEntity`, `UserExtendedEntity`).
-
+* Each API resource are stored in separate file (e.g. `UsersResource`, `OrdersResource`, `RegistrationsResource`, etc) and class which is inherited from `Grape::API.`.
+* Each API resource class (e.g. `UsersResource`) defines a single resource (e.g. `resource :users do ... end`).
+* Entities are stored in `entities/` directory and inherited from `Grape::Entity` class.
+* Each API resource, entity class or helpers module class are wrapped into corresponding module (e.g. `AppV1API::Resources`, `AppV1API::Entities`, `AppV1API::Helpers`).
+* Entity class name corresponds with the model it is related to (e.g. `UserEntity` for `User` model, `OrderEntity` for `Order` model).
+* Specs directory structure follows same directory names (e.g. `spec/apis/app_v1_api/`, `spec/apis/mobile_v1_api/`).
 
 ### Directory Structure
 
 ```
 apis/
-  mobile_v1/ - API for mobile apps
+  app_v1_api/ - API for a generic purpose (default)
     resources/
-      sessions_api.rb
+      sessions_resource.rb
+      users_resource.rb
     entities/
       user_entity.rb
     helpers/
-      application_api_helpers.rb
+      api_helper.rb
+      users_api_helper.rb
     api.rb
-  mobile_v2/ - API for mobile apps (version 2)
-  twilio_v1/ - API for webhooks and callbacks from Twilio
+  mobile_v1_api/ - API for mobile apps (version 1)
+   ...
+  mobile_v2_api/ - API for mobile apps (version 2)
+   ...
+  twilio_v1_api/ - API for webhooks and callbacks from Twilio
     resources/
     entities/
     helpers/
     api.rb
+spec/
+  apis/
+    app_v1_api/
+      resources/
+        sessions_resource_spec.rb
+    twilio_v1_api/
+      resources/
+        *_resource_spec.rb
 ```
 
 ### Example Classes
 
 ```ruby
-# apis/mobile_v1/api.rb
-module MobileV1
-  class API < Grape::API
-    helpers MobileV1::ApplicationAPIHelpers
+## AppV1API ##
 
-    mount MobileV1::SessionsAPI
+# apis/app_v1_api/api.rb
+module AppV1API
+  class API < Grape::API
+    helpers Helpers::APIHelper
+    helpers Helpers::UsersAPIHelper
+
+    mount Resources::SessionsResource
   end
 end
 
-# apis/mobile_v1/resources/sessions_api.rb
-module MobileV1
-  class SessionsAPI < Grape::API
+# apis/app_v1_api/resources/sessions_resource.rb
+module AppV1API::Resources
+  class SessionsResource < Grape::API
     resource :sessions do
       desc 'Login user'
       params do
@@ -57,7 +76,8 @@ module MobileV1
       end
       post do
         # login user
-        present user, with: UserEntity
+        present user,
+          with: ApiV1API::Entities::UserEntity
       end
 
       desc 'Logout user'
@@ -68,26 +88,77 @@ module MobileV1
   end
 end
 
-# apis/mobile_v1/helpers/application_api_helpers.rb
-module MobileV1
-  class ApplicationAPIHelpers
-  end
-end
-
-# apis/mobile_v1/entities/user_entity.rb
-module MobileV1
+# apis/app_v1_api/entities/user_entity.rb
+module AppV1API::Entities
   class UserEntity < Grape::Entity
     expose :email
   end
 end
+
+# apis/app_v1_api/helpers/api_helper.rb
+module AppV1API::Helpers
+  class APIHelper
+    # generic API helpers
+  end
+end
+
+# apis/app_v1_api/helpers/users_api_helper.rb
+module AppV1API::Helpers
+  class UsersAPIHelper
+    # API helpers specific for user resource
+  end
+end
+
+# spec/apis/app_v1_api/resources/sessions_resource_spec.rb
+require 'rails_helper'
+
+describe AppV1API::Resources::SessionsResource, type: :request do
+  describe 'POST /api/v1/sessions' do
+    # ...
+  end
+
+  describe 'DELETE /api/v1/sessions' do
+    # ...
+  end
+end
+
+## MobileV1API ##
+
+# apis/mobile_v1_api/api.rb
+module MobileV1API
+  class API < Grape::API
+    helpers Helpers::APIHelper
+    helpers Helpers::UsersAPIHelper
+
+    mount Resources::SessionsResource
+  end
+end
 ```
 
-## Gems
+## HTTP headers and status codes
 
-* [grape](https://github.com/ruby-grape/grape)
-* [grape-entity](https://github.com/ruby-grape/grape-entity)
-* [grape-swagger-rails](https://github.com/ruby-grape/grape-swagger-rails)
+Some of the more commonly used HTTP status codes are:
+
+#### Success codes
+
+* `200 OK` — request has succeeded.
+* `201 Created` — new resource has been created.
+* `204 No Content` — no content needs to be returned (e.g. when deleting a resource).
+
+#### Client error codes
+
+* `400 Bad Request` — request is malformed in some way (e.g. wrong formatting of JSON, invalid request params, etc).
+* `401 Unauthorized` — authentication failed (valid credentials are required).
+* `403 Forbidden` — authorization failed (client/user is authenticated but does not have permissions for the requested resource or action).
+* `404 Not Found` — resource could not be found.
+* `422 Unprocessable Entity` — resource hasn't be saved (e.g. validations on the resource failed) or action can't be performed.
+
+#### Server error codes
+
+* `500 Internal Server Error` — something exploded in your application.
 
 ## References
 
-* [JSON:API](https://jsonapi.org) - A specification for building APIs in JSON.
+* [Gems for APIs](libraries.md#api) - ErgoServ's list of recommended gems.
+* [httpstatuses.com](https://httpstatuses.com) - HTTP Status Codes is an easy to reference database of HTTP Status Codes with their definitions and helpful code references all in one place.
+* [JSON:API](https://jsonapi.org) - A specification for building advanced APIs in JSON.
