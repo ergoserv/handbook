@@ -32,6 +32,7 @@ See guide [Builing API](building_api.md).
 
 * [capistrano](https://github.com/capistrano/capistrano) - Remote multi-server automation tool.
 * [parity](https://github.com/thoughtbot/parity) - shell commands for development, staging, and production parity for Heroku apps.
+* [whenever](https://github.com/javan/whenever) - Cron jobs in Ruby.
 
 ## Forms
 
