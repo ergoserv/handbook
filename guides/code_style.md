@@ -67,6 +67,13 @@ Also, you can install and use our gem [`auxiliary_rails`](https://github.com/erg
 * Name time columns (referring to a time of day with no date) with `_time` suffixes.
 * Don't change a migration after it has been merged into master if the desired change can be solved with another migration.
 
+#### Mailers
+
+* Use `ApplicationMailer` as "abstract" class (e.g. set global config, shared methods, but avoid adding mailing methods there).
+* Always put subjects to locale files, they are pulled automatically by `action_name`. Use [default_i18n_subject](https://api.rubyonrails.org/v5.2.3/classes/ActionMailer/Base.html#method-i-default_i18n_subject) when you need some interpolation.
+* Use separate locale file for mailer translations (`config/locles/mailers.en.yml`).
+* Use `application_mailer` translation scope to group strings used in all/many mailers.
+
 ### Testing / RSpec
 
 #### Multiline `expect`
