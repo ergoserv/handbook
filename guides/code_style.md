@@ -67,6 +67,12 @@ Also, you can install and use our gem [`auxiliary_rails`](https://github.com/erg
 * Name time columns (referring to a time of day with no date) with `_time` suffixes.
 * Don't change a migration after it has been merged into master if the desired change can be solved with another migration.
 
+## Internationalization (I18n)
+
+* Keep `en.yml` as small as possible, specify here only `date`, `datetime`, `number`, `time` formats.
+* Use `application.en.yml` and `application:` key to store application-wide tranlations.
+* Use separate files to store translations (`activerecord.en.yml`, `helpers.en.yml`, `mailers.en.yml`, etc). Each file should contain corresponding root key (`activerecord`, `helpers`, `mailers`, etc).
+
 #### Mailers
 
 * Use `ApplicationMailer` as "abstract" class (e.g. set global config, shared methods, but avoid adding mailing methods there).
