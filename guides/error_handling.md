@@ -5,7 +5,7 @@
 
 ## ApplicationError
 
-Somethimes for better error handling it is good to introduce a separate error class to decouple our errors from any other `StandardError`s. This can be done with a very simple class.
+Sometimes for better error handling it is good to introduce a separate error class to decouple our errors from any other `StandardError`s. This can be done with a very simple class.
 
 ```ruby
 # app/errors/application_error.rb
@@ -69,7 +69,7 @@ class ApplicationError < StandardError
 end
 ```
 
-For example, we use Twilio to send SMS. Working with Twilio we can get many different errors - user errors (e.g. incorrect phone number), account errors (e.g. insufficient funds), service errors (e.g. service is down), etc. We want to handle all of them and provide users with undersndable feedback as well as notify our monitoring systems.
+For example, we use Twilio to send SMS. Working with Twilio we can get many different errors - user errors (e.g. incorrect phone number), account errors (e.g. insufficient funds), service errors (e.g. service is down), etc. We want to handle all of them and provide users with understandable feedback as well as notify our monitoring systems.
 
 ```ruby
 class TwilioService

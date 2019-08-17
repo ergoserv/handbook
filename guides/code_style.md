@@ -8,7 +8,7 @@ conventions generally accepted and used by the wider community.
 
 We understand that no two projects are the same, each one a little different to
 the next. With that in mind, we recommend using these guides as starting point.
-They can be tweaked and moulded on a per project basis, but make sure everyone
+They can be tweaked and molded on a per project basis, but make sure everyone
 on the team is comfortable with any adjustments you make.
 
 ## Linting
@@ -82,7 +82,7 @@ Also, you can install and use our gem [`auxiliary_rails`](https://github.com/erg
 
 ### Testing / RSpec
 
-#### Multiline `expect`
+#### Multi-line `expect`
 
 ```
 expect { true }

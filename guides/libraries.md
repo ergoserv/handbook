@@ -46,11 +46,11 @@ See guide [Builing API](building_api.md).
 
 ## HTTP
 
-* [httparty](https://github.com/jnunemaker/httparty) - Makes http fun again. (See guide [Building simple HTTP Client](../guides/building_simple_http_client.md)).
+* [httparty](https://github.com/jnunemaker/httparty) - Makes HTTP fun again. (See guide [Building simple HTTP Client](../guides/building_simple_http_client.md)).
 
 ## I18n & L10n
 
-* [i18n-js](https://github.com/fnando/i18n-js) - a small library to provide the I18n translations on the Javascript. It comes with Rails support.
+* [i18n-js](https://github.com/fnando/i18n-js) - a small library to provide the I18n translations on the JavaScript. It comes with Rails support.
 
 ## Pagination
 
@@ -87,7 +87,7 @@ See guide [Testing](testing.md).
 * [capybara](https://github.com/teamcapybara/capybara) - Acceptance test framework for web applications.
 * [factory_bot](https://github.com/thoughtbot/factory_bot), [factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails) - A library for setting up Ruby objects as test data.
 * [faker](https://github.com/stympy/faker) - A library for generating fake data such as names, addresses, and phone numbers.
-* [rspec](https://github.com/rspec/rspec), [rspec-rails](https://github.com/rspec/rspec-rails) - Behaviour Driven Development for Ruby.
+* [rspec](https://github.com/rspec/rspec), [rspec-rails](https://github.com/rspec/rspec-rails) - Behavior Driven Development for Ruby.
 * [simplecov](https://github.com/colszowka/simplecov) - Code coverage with a powerful configuration library.
 * [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers) - Simple one-liner tests for common Rails functionality.
 * [undercover](https://github.com/grodowski/undercover) - Actionable code coverage - detects untested code blocks in recent changes.
@@ -97,7 +97,7 @@ See guide [Testing](testing.md).
 * [enumerize](https://github.com/brainspec/enumerize) - Enumerated attributes with I18n and ActiveRecord/Mongoid support.
 * [inherited_resources](https://github.com/activeadmin/inherited_resources) - Inherited Resources speeds up development by making your controllers inherit all restful actions so you just have to focus on what is important.
 * [overcommit](https://github.com/brigade/overcommit) - A fully configurable and extendable Git hook manager.
-* [retriable](https://github.com/kamui/retriable) - Retriable is an simple DSL to retry failed code blocks with randomized exponential backoff.
+* [retriable](https://github.com/kamui/retriable) - Retriable is an simple DSL to retry failed code blocks with randomized exponential back-off.
 * [request_store](https://github.com/steveklabnik/request_store) - Per-request global storage for Rack.
 * [paper_trail](https://github.com/paper-trail-gem/paper_trail) - Track changes to your Rails models.
 

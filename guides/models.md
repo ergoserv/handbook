@@ -30,7 +30,7 @@ class Customer < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
 
-  # Callbacks, in lifecycle, then alphabetical order (if you really have to)
+  # Callbacks, in life-cycle, then alphabetical order (if you really have to)
   before_validation :parse_name
   after_create :send_email
 

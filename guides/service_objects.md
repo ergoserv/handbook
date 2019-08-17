@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Service Objects is a solution to decomopse busissiness logic of the application from other layers of the application.
+Service Objects is a solution to decompose business logic of the application from other layers of the application.
 
 ## Conventions
 
@@ -16,7 +16,7 @@ Service Objects is a solution to decomopse busissiness logic of the application 
 
 ### Example #1: GalleryService
 
-You have taks to render user's photos. User have 3 sources of photos - Facebook, Instagram, and uploaded into our database.
+You have task to render user's photos. User have 3 sources of photos - Facebook, Instagram, and uploaded into our database.
 
 ```ruby
 # app/service/gallery_service.rb
