@@ -20,26 +20,27 @@ API is an important part of web applications. They provide interfaces for commun
 ### Directory Structure
 
 ```
-apis/
-  app_v1_api/ - API for a generic purpose (default)
-    resources/
-      sessions_resource.rb
-      users_resource.rb
-    entities/
-      user_entity.rb
-    helpers/
-      api_helper.rb
-      users_api_helper.rb
-    api.rb
-  mobile_v1_api/ - API for mobile apps (version 1)
-   ...
-  mobile_v2_api/ - API for mobile apps (version 2)
-   ...
-  twilio_v1_api/ - API for webhooks and callbacks from Twilio
-    resources/
-    entities/
-    helpers/
-    api.rb
+app/
+  apis/
+    app_v1_api/ - API for a generic purpose (default)
+      entities/
+        user_entity.rb
+      helpers/
+        api_helper.rb
+        users_api_helper.rb
+      resources/
+        sessions_resource.rb
+        users_resource.rb
+      api.rb
+    mobile_v1_api/ - API for mobile apps (version 1)
+     ...
+    mobile_v2_api/ - API for mobile apps (version 2)
+     ...
+    twilio_v1_api/ - API for webhooks and callbacks from Twilio
+      entities/
+      helpers/
+      resources/
+      api.rb
 spec/
   apis/
     app_v1_api/
@@ -55,9 +56,13 @@ spec/
 ```ruby
 ## AppV1API ##
 
-# apis/app_v1_api/api.rb
+# app/apis/app_v1_api/api.rb
 module AppV1API
   class API < Grape::API
+    version 'v1'
+    format :json
+    rescue_from :all
+
     helpers Helpers::APIHelper
     helpers Helpers::UsersAPIHelper
 
@@ -65,7 +70,7 @@ module AppV1API
   end
 end
 
-# apis/app_v1_api/resources/sessions_resource.rb
+# app/apis/app_v1_api/resources/sessions_resource.rb
 module AppV1API::Resources
   class SessionsResource < Grape::API
     resource :sessions do
@@ -88,26 +93,29 @@ module AppV1API::Resources
   end
 end
 
-# apis/app_v1_api/entities/user_entity.rb
+# app/apis/app_v1_api/entities/user_entity.rb
 module AppV1API::Entities
   class UserEntity < Grape::Entity
     expose :email
   end
 end
 
-# apis/app_v1_api/helpers/api_helper.rb
+# app/apis/app_v1_api/helpers/api_helper.rb
 module AppV1API::Helpers
   class APIHelper
     # generic API helpers
   end
 end
 
-# apis/app_v1_api/helpers/users_api_helper.rb
+# app/apis/app_v1_api/helpers/users_api_helper.rb
 module AppV1API::Helpers
   class UsersAPIHelper
     # API helpers specific for user resource
   end
 end
+
+# config/routes.rb
+mount AppV1API::API => '/api'
 
 # spec/apis/app_v1_api/resources/sessions_resource_spec.rb
 require 'rails_helper'
@@ -124,15 +132,22 @@ end
 
 ## MobileV1API ##
 
-# apis/mobile_v1_api/api.rb
+# app/apis/mobile_v1_api/api.rb
 module MobileV1API
   class API < Grape::API
+    version 'v1'
+    format :json
+    rescue_from :all
+
     helpers Helpers::APIHelper
     helpers Helpers::UsersAPIHelper
 
     mount Resources::SessionsResource
   end
 end
+
+# config/routes.rb
+mount MobileV1API::API => '/api'
 ```
 
 ## HTTP headers and status codes
