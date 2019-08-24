@@ -60,6 +60,10 @@ Also, you can install and use our gem [`auxiliary_rails`](https://github.com/erg
 * Avoid using callbacks for setting instance variables. Use them only for changing the application flow, such as redirecting if a user is not authenticated.
 * Use `private` instead of `protected` when defining controller methods.
 
+### CSS/SCSS
+
+* Use SCSS's class nesting always.
+
 ### Databases
 
 * Name date columns with `_on` suffixes.
