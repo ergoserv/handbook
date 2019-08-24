@@ -93,6 +93,26 @@ module AppV1API::Resources
   end
 end
 
+# app/apis/app_v1_api/resources/users_resource.rb
+module AppV1API::Resources
+  class UsersResource < Grape::API
+    resource :users do
+      desc 'Returns resource collection'
+      get do
+        # ...
+      end
+
+      # Nested Versioning if you need minor updates to API
+      version 'v1.1' do
+        desc 'Returns resource collection (API Version 1.1)'
+        get do
+          # ...
+        end
+      end
+    end
+  end
+end
+
 # app/apis/app_v1_api/entities/user_entity.rb
 module AppV1API::Entities
   class UserEntity < Grape::Entity
