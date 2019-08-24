@@ -67,6 +67,12 @@ module AppV1API
     helpers Helpers::UsersAPIHelper
 
     mount Resources::SessionsResource
+
+    add_swagger_documentation(
+      info: {
+        title: 'Application API V1'
+      }
+    )
   end
 end
 
@@ -191,6 +197,34 @@ Some of the more commonly used HTTP status codes are:
 #### Server error codes
 
 * `500 Internal Server Error` — something exploded in your application.
+
+## Setup
+
+```ruby
+# Gemfile
+gem 'grape'
+gem 'grape-entity'
+gem 'grape-swagger'
+gem 'grape-swagger-entity'
+gem 'grape-swagger-rails'
+
+group :test do
+  gem 'airborne'
+end
+
+# config/initializers/swagger.rb
+GrapeSwaggerRails.options.app_name = 'Application Swagger'
+GrapeSwaggerRails.options.hide_url_input = true
+GrapeSwaggerRails.options.before_action do
+  GrapeSwaggerRails.options.app_url = \
+    request.protocol + request.host_with_port + '/api/v1'
+end
+
+# config/routes.rb
+if Rails.env.in? %w[development]
+  mount GrapeSwaggerRails::Engine => '/api/docs'
+end
+```
 
 ## References
 
