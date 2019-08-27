@@ -73,12 +73,16 @@ Also, you can install and use our gem [`auxiliary_rails`](https://github.com/erg
 * Use `application.en.yml` and `application:` key to store application-wide tranlations.
 * Use separate files to store translations (`activerecord.en.yml`, `helpers.en.yml`, `mailers.en.yml`, etc). Each file should contain corresponding root key (`activerecord`, `helpers`, `mailers`, etc).
 
-#### Mailers
+#### Mailers Internationalization (I18n)
 
 * Use `ApplicationMailer` as "abstract" class (e.g. set global config, shared methods, but avoid adding mailing methods there).
 * Always put subjects to locale files, they are pulled automatically by `action_name`. Use [default_i18n_subject](https://api.rubyonrails.org/v5.2.3/classes/ActionMailer/Base.html#method-i-default_i18n_subject) when you need some interpolation.
 * Use separate locale file for mailer translations (`config/locles/mailers.en.yml`).
 * Use `application_mailer` translation scope to group strings used in all/many mailers.
+
+### Rake Tasks
+
+* Put all application rake tasks under the `namespace` named according to appliation. This will allow to separate them from all other tasks when you call `rake --tasks`.
 
 ### Testing / RSpec
 
