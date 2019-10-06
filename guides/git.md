@@ -41,20 +41,6 @@ git checkout develop
 git checkout -b feature/subject
 ```
 
-### Staging Branch (`staging`)
-
-Web development flow includes two special branches: `staging` and `production`. These branches are designed to collect code for delivering to staging and production servers respectively.
-
-`staging` is created from `develop`.
-
-Developers may continuously merge feature branches (even if they are in WIP status) into `staging` branch and deploy to staging server for reviews. Time to time, `staging` can be reset to `develop`.
-
-Branch `staging` can be setup for automatic deploys to staging servers.
-
-### Production Branch (`production`)
-
-Separate `production` branch can be used for some specific cases to deploy code to production servers.
-
 ### Hotfix Branches (`hotfix/*`)
 
 Maintenance or `hotfix` branches are used to quickly patch production releases. Hotfix branches are a lot like release branches and feature branches except they're based on `master` instead of `develop`. This is the only branch that should fork directly off of `master`. As soon as the fix is complete, it should be merged into both `master` and `develop` (or the current release branch), and `master` should be tagged with an updated version number.
@@ -65,6 +51,26 @@ Maintenance or `hotfix` branches are used to quickly patch production releases. 
 git checkout master
 git checkout -b hotfix/subject
 ```
+
+### Staging Branch (`staging`)
+
+Web development flow includes two special branches: `staging` and `production`. These branches are designed to collect code for delivering to staging and production servers respectively.
+
+- Branch `staging` is created from `develop`.
+- Branch `staging` should not be merged anywhere, it is used only for deployments to staging servers.
+- Developers may continuously merge feature branches (even if they are in WIP status) into `staging` branch and deploy to staging server for reviews. Time to time, `staging` can be reset to `develop` to cleanup redundant merge commits.
+- Branch `staging` can be used for automatic deploys to staging servers.
+
+### Production Branch (`production`)
+
+Separate `production` branch can be used for some specific cases to deploy code to production servers.
+
+## Pull Requests
+
+- Pull Request can be created for `feature/*` or `hotfix/*` branches only, targeting `develop` and `master` branches respectively.
+- Subject should contain: issue ID(s) and short meaningful description of the PR's contents.
+- Description should contain: link to related issue(s) + description of the contents + additional notes (e.g. deployment instructions, etc).
+- Prefix `WIP:` (Work-in-Progress) can be used for PR's subjects when PR is not yet ready for review and deployment.
 
 ## Tags
 
