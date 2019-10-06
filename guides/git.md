@@ -18,7 +18,10 @@ Branch `master` should always contain the version of code deployed to production
 
 ### Develop Branch (`develop`)
 
-Instead of a single master branch, we use two branches to record the history of the project. The `master` branch stores the official release history, and the `develop` branch serves as an integration branch for features. `develop` may contain features that were not released yet. `develop` is a default branch to create `feature` branches from.
+Instead of a single master branch, we use two branches to record the history of the project. The `master` branch stores the official release history, and the `develop` branch serves as an integration branch for features.
+
+- Branch `develop` may contain features that were not released yet.
+- Branch `develop` is a default branch to create `feature` branches from.
 
 #### Creating a `develop` branch
 
@@ -27,7 +30,7 @@ git branch develop
 git push -u origin develop
 ```
 
-### Feature Branches (`feature/`)
+### Feature Branches (`feature/*`)
 
 Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. But, instead of branching off of `master`, feature branches use `develop` as their parent branch. When a feature is complete, it gets merged back into `develop`. Features should never interact directly with `master`.
 
@@ -71,6 +74,31 @@ Separate `production` branch can be used for some specific cases to deploy code 
 - Subject should contain: issue ID(s) and short meaningful description of the PR's contents.
 - Description should contain: link to related issue(s) + description of the contents + additional notes (e.g. deployment instructions, etc).
 - Prefix `WIP:` (Work-in-Progress) can be used for PR's subjects when PR is not yet ready for review and deployment.
+
+### Working with Pull Requests
+
+- Avoid overwriting the public branches, don't force push branches especially if they were merged to `staging`, have dependent branches, or may be used by other teammates.
+- Try to provide meaningful messages for all commits.
+- Keep `feature` branch as fresh as possible, merge `develop` branch into it when needed to avoid big divergence and possible merge conflicts.
+
+### Merging Pull Requests
+
+1. Squash unnecessary commits of the `feature` branch.
+2. Rebase the `feature` branch onto `develop` branch (especially when the `feature` branch has conflicts against the `develop` branch). Command: `git rebase develop`.
+3. Push squashed and rebased `feature` branch to the remote repository.
+4. Merge `feature` into `develop` using `--no-ff` option (if pull request approved and ready for deployment). Command: `git merge --no-ff feature/*`.
+5. Merge updated `develop` or `feature` branch into the `staging` branch and redeploy staging servers.
+
+Read [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-rebasing) for better understanding these approaches.
+
+### Merging into `master`
+
+- Branch `master` should always reflect the state of code deployed to production servers.
+
+#### Merging `develop` into `master`
+
+- Merging `develop` into `master` should be always fast-forward (`git merge -ff-only develop`), not merge commits should be created.
+- Merge `master` into the `staging` branch and redeploy staging servers right after the production deployment ensure they are in-sync.
 
 ## Tags
 
