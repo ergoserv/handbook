@@ -12,46 +12,54 @@ Branch                                   | May branch off from   | Must merge ba
 `staging`                                | `develop`             | —                          | —          | Represents the current staging server state. develop, feature/*, hotfix/* branches may be merged here directly for testing and demonstration.
 `production`                             | `master`              | —                          | —          | Represents the production server state. Always, event when maser is already preparing for the next release. hotfix/* branched may be merged into it directly.
 
+### Master Branch (`master`)
 
-## Develop and Master Branches
+Branch `master` should always contain the version of code deployed to production servers. Rewriting the history of this branch should be avoided.
 
-Instead of a single master branch, we use two branches to record the history of the project. The `master` branch stores the official release history, and the `develop` branch serves as an integration branch for features. `develop` may contain features that were not released yet. `develop` is a default branch to create feature branches from.
+### Develop Branch (`develop`)
 
+Instead of a single master branch, we use two branches to record the history of the project. The `master` branch stores the official release history, and the `develop` branch serves as an integration branch for features. `develop` may contain features that were not released yet. `develop` is a default branch to create `feature` branches from.
 
-### Creating a develp branch
+#### Creating a `develop` branch
 
 ```
 git branch develop
 git push -u origin develop
 ```
 
-## Feature Branches
+### Feature Branches (`feature/`)
 
 Each new feature should reside in its own branch, which can be pushed to the central repository for backup/collaboration. But, instead of branching off of `master`, feature branches use `develop` as their parent branch. When a feature is complete, it gets merged back into `develop`. Features should never interact directly with `master`.
 
 Feature branches are generally created off to the latest `develop` branch.
 
 
-### Creating a feature branch
+#### Creating a feature branch
 
 ```
 git checkout develop
 git checkout -b feature/subject
 ```
 
-## Staging and Production Branches
+### Staging Branch (`staging`)
 
 Web development flow includes two special branches: `staging` and `production`. These branches are designed to collect code for delivering to staging and production servers respectively.
 
-`staging` is created from `develop`. `production` - from `master`.
+`staging` is created from `develop`.
 
 Developers may continuously merge feature branches (even if they are in WIP status) into `staging` branch and deploy to staging server for reviews. Time to time, `staging` can be reset to `develop`.
 
-## Maintenance or “hotfix” branches
+Branch `staging` can be setup for automatic deploys to staging servers.
 
-Maintenance or “hotfix” branches are used to quickly patch production releases. Hotfix branches are a lot like release branches and feature branches except they're based on `master` instead of `develop`. This is the only branch that should fork directly off of `master`. As soon as the fix is complete, it should be merged into both `master` and `develop` (or the current release branch), and `master` should be tagged with an updated version number.
+### Production Branch (`production`)
 
-### Creating a hotfix branch
+Separate `production` branch can be used for some specific cases to deploy code to production servers.
+
+### Hotfix Branches (`hotfix/*`)
+
+Maintenance or `hotfix` branches are used to quickly patch production releases. Hotfix branches are a lot like release branches and feature branches except they're based on `master` instead of `develop`. This is the only branch that should fork directly off of `master`. As soon as the fix is complete, it should be merged into both `master` and `develop` (or the current release branch), and `master` should be tagged with an updated version number.
+
+#### Creating a `hotfix/` branch
 
 ```
 git checkout master
@@ -70,7 +78,7 @@ Format: `vX.X.X` where `X.X.X` is version following [Semantic Versioning](https:
 * Commit *early* and *often*. Small, self-contained commits are easier to understand and revert when something goes wrong.
 * Commits should be ordered *logically*. For example, if *commit X* depends on changes done in *commit Y*, then *commit Y* should come before *commit X*.
 
-## Messages
+### Messages
 
 * The summary line (ie. the first line of the message) should be descriptive yet succinct. Ideally, it should be no longer than 50 characters. It should be capitalized and written in imperative present tense. It should not end with a period since it is effectively the commit title:
 ```
