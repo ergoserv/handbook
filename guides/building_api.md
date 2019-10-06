@@ -198,7 +198,7 @@ Some of the more commonly used HTTP status codes are:
 
 * `500 Internal Server Error` — something exploded in your application.
 
-## Setup
+## Setup and Configuration
 
 ```ruby
 # Gemfile
