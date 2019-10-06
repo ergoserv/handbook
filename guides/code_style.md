@@ -88,6 +88,7 @@ Also, you can install and use our gem [`auxiliary_rails`](https://github.com/erg
 ### Rake Tasks
 
 * Put all application rake tasks under the `namespace` named according to appliation. This will allow to separate them from all other tasks when you call `rake --tasks`.
+* Use tasks tasks only to call command or service object, avoid putting any business logic into rake tasks.
 
 ### Testing / RSpec
 
