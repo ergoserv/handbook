@@ -75,7 +75,7 @@ Separate `production` branch can be used for some specific cases to deploy code 
 - Description should contain: link to related issue(s) + description of the contents + additional notes (e.g. deployment instructions, etc).
 - Prefix `WIP:` (Work-in-Progress) can be used for PR's subjects when PR is not yet ready for review and deployment.
 
-### Working with Pull Requests
+### Updating Pull Requests
 
 - Avoid overwriting the public branches, don't force push branches especially if they were merged to `staging`, have dependent branches, or may be used by other teammates.
 - Try to provide meaningful messages for all commits.
