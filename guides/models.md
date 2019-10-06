@@ -8,6 +8,10 @@ The following is a base template for an ActiveRecord model `Customer`.
 * Order associations, scopes and validations alphabetically
 * Aim to remove business logic that is not directly related to reading from or writing to the database
 
+## Conventions
+
+* Use `display_name` as a universal method to format generic model's name.
+
 ## Template
 
 ```ruby
