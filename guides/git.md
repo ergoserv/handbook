@@ -97,7 +97,7 @@ Read [Merging vs. Rebasing](https://www.atlassian.com/git/tutorials/merging-vs-r
 
 #### Merging `develop` into `master`
 
-- Merging `develop` into `master` should be always fast-forward (`git merge -ff-only develop`), not merge commits should be created.
+- Merging `develop` into `master` should be always fast-forward (`git merge --ff-only develop`), not merge commits should be created.
 - Merge `master` into the `staging` branch and redeploy staging servers right after the production deployment ensure they are in-sync.
 
 ## Tags
