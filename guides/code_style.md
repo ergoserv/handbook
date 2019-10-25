@@ -71,6 +71,7 @@ Also, you can install and use our gem [`auxiliary_rails`](https://github.com/erg
 * Name datetime columns with `_at` suffixes.
 * Name time columns (referring to a time of day with no date) with `_time` suffixes.
 * Don't change a migration after it has been merged into master if the desired change can be solved with another migration.
+* Use capital letters only for SQL keywords and functions when writing plain SQL.
 
 ## Internationalization (I18n)
 
