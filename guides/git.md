@@ -73,6 +73,7 @@ Separate `production` branch can be used for some specific cases to deploy code 
 - Pull Request can be created for `feature/*` or `hotfix/*` branches only, targeting `develop` and `master` branches respectively.
 - Subject should contain: issue ID(s) and short meaningful description of the PR's contents.
 - Description should contain: link to related issue(s) + description of the contents + additional notes (e.g. deployment instructions, etc).
+- Subject and description should start with a capital letter, as well as each sentence in the description.
 - Prefix `WIP:` (Work-in-Progress) can be used for PR's subjects when PR is not yet ready for review and deployment.
 
 ### Updating Pull Requests
