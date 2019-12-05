@@ -4,6 +4,7 @@ Collection of useful services and tools.
 
 ## API and Webhooks
 
+* [httpie.org](https://httpie.org) -  command line HTTP client with an intuitive UI, JSON support, syntax highlighting, wget-like downloads, plugins, and more.
 * [httpstatuses.com](https://httpstatuses.com) - HTTP Status Codes is an easy to reference database of HTTP Status Codes with their definitions and helpful code references all in one place.
 * [requestbin.com](https://requestbin.com) - A modern request bin to inspect HTTP events
 * [postb.in](https://postb.in) - Programatically Test your API Clients or Webhooks
