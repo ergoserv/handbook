@@ -62,11 +62,14 @@ Web development flow includes two special branches: `staging` and `production`. 
 - Branch `staging` is created from `develop`.
 - Branch `staging` should not be merged anywhere, it is used only for deployments to staging servers.
 - Developers may continuously merge feature branches (even if they are in WIP status) into `staging` branch and deploy to staging server for reviews. Time to time, `staging` can be reset to `develop` to cleanup redundant merge commits.
+- Branch `staging` should always represent the current state of staging server.
 - Branch `staging` can be used for automatic deploys to staging servers.
 
 ### Production Branch (`production`)
 
 Separate `production` branch can be used for some specific cases to deploy code to production servers.
+
+- Branch `production` should always represent the current state of production server.
 
 ## Pull Requests
 
