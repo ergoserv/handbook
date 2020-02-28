@@ -96,6 +96,7 @@ See guide [Testing](testing.md).
 
 * [enumerize](https://github.com/brainspec/enumerize) - Enumerated attributes with I18n and ActiveRecord/Mongoid support.
 * [inherited_resources](https://github.com/activeadmin/inherited_resources) - Inherited Resources speeds up development by making your controllers inherit all restful actions so you just have to focus on what is important.
+* [money](https://github.com/Rubymoney/money), [money-rails](https://github.com/RubyMoney/money-rails) - A Ruby Library for dealing with money and currency conversion.
 * [overcommit](https://github.com/brigade/overcommit) - A fully configurable and extendable Git hook manager.
 * [retriable](https://github.com/kamui/retriable) - Retriable is an simple DSL to retry failed code blocks with randomized exponential back-off.
 * [request_store](https://github.com/steveklabnik/request_store) - Per-request global storage for Rack.
@@ -103,4 +104,5 @@ See guide [Testing](testing.md).
 
 ## Views
 
+* [draper](https://github.com/drapergem/draper) - Decorators/View-Models for Rails Applications.
 * [loaf](https://github.com/piotrmurach/loaf) - Manages and displays breadcrumb trails in Rails app - lean & mean.
