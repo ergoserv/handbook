@@ -1,8 +1,10 @@
-# Service Objects
+# Service Modules
 
 ## Introduction
 
-Service Objects is a solution to decompose business logic of the application from other layers of the application.
+*Service Modules* is a solution to decompose business logic of the application from other layers of the application and make it a bit more modular.
+
+Refer to [Command Objects](../guides/command_objects.md) if you are looking for *Service Objects*.
 
 ## Conventions
 
@@ -10,7 +12,7 @@ Service Objects is a solution to decompose business logic of the application fro
 * Service name should have suffix `Service` (e.g.: `app/services/order_service.rb` file will define `module OrderService`)
 * Basic service file should define module (e.g.: `module OrderService`, `module GalleryService`)
 * Basic service module may contain constants, configurations, class methods
-* Use subdirectories to store subclasses of the service (e.g.: `gallery_service.rb`, `gallery_service/facebook_repository.rb`, etc)
+* Use subdirectories to store subclasses of the service (e.g.: `gallery_service.rb`, `gallery_service/facebook_repository.rb`, etc).
 
 ## Examples
 

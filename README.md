@@ -1,4 +1,4 @@
-# ErgoServ 📙 Orange Handbook
+# ErgoServ Handbook
 
 Our collection of guides, recipes and scripts for helping you get things done, better.
 
@@ -10,6 +10,7 @@ Our collection of guides, recipes and scripts for helping you get things done, b
   - [Building a simple HTTP Client](guides/building_simple_http_client.md)
   - [Code Style](guides/code_style.md)
   - [Coding Principles](guides/coding_principles.md)
+  - [Command Objects](guides/command_objects.md) (a.k.a. Service Objects)
   - [Error Handing](guides/error_handling.md)
   - [Form Objects](guides/form_objects.md)
   - [Git](guides/git.md)
@@ -17,7 +18,7 @@ Our collection of guides, recipes and scripts for helping you get things done, b
   - [Models](guides/models.md)
   - [Policies](guides/policies.md)
   - [Query Objects](guides/query_objects.md)
-  - [Service Objects](guides/service_objects.md)
+  - [Service Modules](guides/service_modules.md)
   - [Services and Tools](guides/services_and_tools.md)
   - [Testing](guides/testing.md)
   - [Variables](guides/variables.md)
