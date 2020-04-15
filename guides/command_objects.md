@@ -7,11 +7,11 @@
 ## Conventions
 
 * Commands go under the `app/commands` directory.
-* Command name should have suffix `Command` .
-* Command name should contain verb (e.g. `PostPublishCommand`).
+* Command name should have suffix `Command`.
+* Command name should contain a verb (e.g. `PostPublishCommand`).
 * Command should have only one public method (`#perform`).
 * Keep method `#perform` short, simple and clear.
-* Put all business logic into private methods with a very clear, self-explanatory and meaninful names.
+* Put all business logic into private methods with a very clear, self-explanatory and meaningful names.
 * Use [auxiliary_rails](https://github.com/ergoserv/auxiliary_rails) gem.
 
 ## References
