@@ -6,9 +6,9 @@ A very simple and handy HTTP Client can be build with [httparty](https://github.
 
 ## Conventions
 
-* Class should be named according to the service name (e.g.: `TwitterClient`)
-* Class should have suffix `Client` or `HTTParty` (e.g.: `TwitterClient`, `GoogleHTTParty`).
-* Files usually will be stored under service directory (e.g.: `app/services/twitter_service/twitter_httparty.rb`).
+* Class should be named according to the service name it interacts with (e.g.: `TwitterClient`)
+* Class should have suffix `Client` (e.g.: `TwitterClient`).
+* Class should be stored inside the corresponding [service module](service_modules.md) directory (e.g.: `app/services/twitter_service/twitter_client.rb`).
 
 ## Examples
 
@@ -17,6 +17,7 @@ A very simple and handy HTTP Client can be build with [httparty](https://github.
 module TwitterService
   class TwitterClient
     include HTTParty
+    
     base_uri 'twitter.com'
 
     def initialize(username, password)
