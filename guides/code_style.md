@@ -16,31 +16,9 @@ on the team is comfortable with any adjustments you make.
 
 We use a number of tools to enforce style compliance:
 
-  * RuboCop, for Ruby lints
-  * RuboCop RSpec, for RSpec lints
+### RuboCop
 
-First, you need to add the gems to your project's `Gemfile`:
-
-```ruby
-group :development do
-  gem 'rubocop', require: false
-  gem 'rubocop-rspec', require: false
-end
-```
-
-### Configs
-
-Then you need to add some configs that implement our styles.
-
-The following is a list of configuration files you're encouraged to use in a new project:
-
-* [rubocop_template.yml](https://github.com/ergoserv/auxiliary_rails/blob/master/lib/generators/auxiliary_rails/templates/rubocop/rubocop_template.yml) -> `.rubocop.yml`
-* [rubocop_auxiliary_rails_template.yml](https://github.com/ergoserv/auxiliary_rails/blob/master/lib/generators/auxiliary_rails/templates/rubocop/rubocop_auxiliary_rails_template.yml) -> `.rubocop_auxiliary_rails.yml`
-
-These files should go into your project's root directory.
-`.rubocop_auxiliary_rails.yml` - should not be modified in order to be able to be updated it when needed.
-
-Also, you can install and use our gem [`auxiliary_rails`](https://github.com/ergoserv/auxiliary_rails) to generate these configs.
+Use our gem [`rubocop-ergoserv`](https://github.com/ergoserv/rubocop-ergoserv) to install all needed gems and generate configs.
 
 ## Conventions and Recommendations
 
@@ -110,6 +88,7 @@ expect { true }
 
 ## References
 
+* [`rubocop-ergoserv`](https://github.com/ergoserv/rubocop-ergoserv) - ErgoServ's shared configs for RuboCop.
 * [The Ruby Style Guide](https://github.com/rubocop-hq/ruby-style-guide)
 * [The Rails Style Guide](https://github.com/rubocop-hq/rails-style-guide)
 * [The RSpec Style Guide](https://github.com/rubocop-hq/rspec-style-guide)
