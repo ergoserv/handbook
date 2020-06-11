@@ -16,15 +16,17 @@ See guide [Builing API](building_api.md).
 
 ## Backgound Jobs
 
+* [rails/activejob](https://guides.rubyonrails.org/active_job_basics.html)
 * [sidekiq](https://github.com/mperham/sidekiq) - Simple, efficient background processing for Ruby.
 
 ## Configuration
 
 * [dotenv](https://github.com/bkeepers/dotenv) - A Ruby gem to load environment variables from `.env`.
 
-## Debugging
+## Development & Debugging
 
 * [httplog](https://github.com/trusche/httplog) - Log outgoing HTTP requests in ruby.
+* [overcommit](https://github.com/brigade/overcommit) - A fully configurable and extendable Git hook manager.
 * [pry](https://github.com/pry/pry), [pry-rails](https://github.com/rweng/pry-rails) - A runtime developer console and IRB alternative with powerful introspection capabilities.
 * [table_print](http://tableprintgem.com/) - TablePrint shows objects in nicely formatted columns for easy reading.
 
@@ -37,6 +39,7 @@ See guide [Builing API](building_api.md).
 ## Forms
 
 * [formtastic](https://github.com/justinfrench/formtastic) - A Rails form builder plugin with semantically rich and accessible markup.
+* [simple_form](https://github.com/heartcombo/simple_form) - Forms made easy for Rails! It's tied to a simple DSL, with no opinion on markup.
 
 ## File Uploading
 
@@ -97,7 +100,6 @@ See guide [Testing](testing.md).
 * [enumerize](https://github.com/brainspec/enumerize) - Enumerated attributes with I18n and ActiveRecord/Mongoid support.
 * [inherited_resources](https://github.com/activeadmin/inherited_resources) - Inherited Resources speeds up development by making your controllers inherit all restful actions so you just have to focus on what is important.
 * [money](https://github.com/Rubymoney/money), [money-rails](https://github.com/RubyMoney/money-rails) - A Ruby Library for dealing with money and currency conversion.
-* [overcommit](https://github.com/brigade/overcommit) - A fully configurable and extendable Git hook manager.
 * [retriable](https://github.com/kamui/retriable) - Retriable is an simple DSL to retry failed code blocks with randomized exponential back-off.
 * [request_store](https://github.com/steveklabnik/request_store) - Per-request global storage for Rack.
 * [paper_trail](https://github.com/paper-trail-gem/paper_trail) - Track changes to your Rails models.
