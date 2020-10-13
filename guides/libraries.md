@@ -47,13 +47,14 @@ See guide [Builing API](building_api.md).
 * [carrierwave](https://github.com/carrierwaveuploader/carrierwave) - Classier solution for file uploads for Rails, Sinatra and other Ruby web frameworks.
 * [shrine](https://shrinerb.com) - File Attachment toolkit for Ruby applications.
 
-## HTTP
-
-* [httparty](https://github.com/jnunemaker/httparty) - Makes HTTP fun again. (See guide [Building simple HTTP Client](../guides/building_simple_http_client.md)).
-
 ## I18n & L10n
 
 * [i18n-js](https://github.com/fnando/i18n-js) - a small library to provide the I18n translations on the JavaScript. It comes with Rails support.
+
+## Network and HTTP
+
+* [httparty](https://github.com/jnunemaker/httparty) - Makes HTTP fun again. (See guide [Building simple HTTP Client](../guides/building_simple_http_client.md)).
+* [retriable](https://github.com/kamui/retriable) - Retriable is an simple DSL to retry failed code blocks with randomized exponential back-off.
 
 ## Pagination
 
@@ -100,7 +101,6 @@ See guide [Testing](testing.md).
 * [enumerize](https://github.com/brainspec/enumerize) - Enumerated attributes with I18n and ActiveRecord/Mongoid support.
 * [inherited_resources](https://github.com/activeadmin/inherited_resources) - Inherited Resources speeds up development by making your controllers inherit all restful actions so you just have to focus on what is important.
 * [money](https://github.com/Rubymoney/money), [money-rails](https://github.com/RubyMoney/money-rails) - A Ruby Library for dealing with money and currency conversion.
-* [retriable](https://github.com/kamui/retriable) - Retriable is an simple DSL to retry failed code blocks with randomized exponential back-off.
 * [request_store](https://github.com/steveklabnik/request_store) - Per-request global storage for Rack.
 * [paper_trail](https://github.com/paper-trail-gem/paper_trail) - Track changes to your Rails models.
 
