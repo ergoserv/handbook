@@ -101,6 +101,7 @@ See guide [Testing](testing.md).
 * [retriable](https://github.com/kamui/retriable) - Retriable is an simple DSL to retry failed code blocks with randomized exponential back-off.
 * [request_store](https://github.com/steveklabnik/request_store) - Per-request global storage for Rack.
 * [paper_trail](https://github.com/paper-trail-gem/paper_trail) - Track changes to your Rails models.
+* [rails-erd](https://github.com/voormedia/rails-erd) - Generate entity-relationship diagrams for rails applications.
 
 ## Views
 
