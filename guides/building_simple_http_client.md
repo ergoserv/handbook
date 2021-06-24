@@ -12,6 +12,8 @@ A very simple and handy HTTP Client can be build with [httparty](https://github.
 
 ## Examples
 
+### TwitterClient
+
 ```ruby
 # app/services/twitter_service/twitter_client.rb
 module TwitterService
@@ -38,11 +40,26 @@ module TwitterService
   end
 end
 
+# app/services/twitter_service.rb
+module TwitterService
+  def self.client
+    @client ||=TwitterService::TwitterClient.new(secret_twitter_email, secret_twitter_password)
+  end
+end
+```
+
+```ruby
 ## usage
+
+# custom twitter client
 twitter_client = TwitterService::TwitterClient.new('test@mail.com', 'password')
 twitter_client.timeline
+
+# singleton twitter client
+TwitterService.client.timeline
 ```
 
 ## References
 
 * [httparty](https://github.com/jnunemaker/httparty)
+* [Service Modules](../guides/service_modules.md)
