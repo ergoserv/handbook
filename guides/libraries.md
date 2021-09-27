@@ -21,6 +21,7 @@ See guide [Builing API](building_api.md).
 
 ## Configuration
 
+* [config](https://github.com/rubyconfig/config) - Easiest way to add multi-environment yaml settings to Rails and other Ruby projects.
 * [dotenv](https://github.com/bkeepers/dotenv) - A Ruby gem to load environment variables from `.env`.
 
 ## Development & Debugging
