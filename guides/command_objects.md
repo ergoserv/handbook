@@ -6,7 +6,7 @@
 
 ## Conventions
 
-* Commands go under the `app/commands` directory.
+* Commands go under the `app/commands` directory if it doesn't related to any service. If it's a part of some service it can be under `app/services/some_service` directory (e.g. `GoogleService::RefreshUserDataCommand`).
 * Command name should have suffix `Command`.
 * Command name should contain a verb (e.g. `PostPublishCommand`).
 * Command should have only one public method (`#perform`).
