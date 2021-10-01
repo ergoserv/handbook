@@ -104,6 +104,7 @@ See guide [Testing](testing.md).
 * [money](https://github.com/Rubymoney/money), [money-rails](https://github.com/RubyMoney/money-rails) - A Ruby Library for dealing with money and currency conversion.
 * [request_store](https://github.com/steveklabnik/request_store) - Per-request global storage for Rack.
 * [paper_trail](https://github.com/paper-trail-gem/paper_trail) - Track changes to your Rails models.
+* [rails-erd](https://github.com/voormedia/rails-erd) - Generate Entity-Relationship Diagrams for Rails applications.
 
 ## Views
 
