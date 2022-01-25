@@ -115,7 +115,7 @@ module GalleryService
     end
 
     def fetch_all
-      photos = facebook_service.photos
+      photos = facebook_client.photos
 
       photos.map do |photo|
         PhotoStruct.new(
@@ -128,12 +128,12 @@ module GalleryService
 
     private
 
-    def facebook_service
+    def facebook_client
       unless connected?
         raise Error, "Facebook is not connected for user #{user}"
       end
 
-      @facebook_service ||= FacebookService.new(user.facebook_token)
+      @facebook_client ||= FacebookService::Client.new(user.facebook_token)
     end
   end
 end
@@ -146,7 +146,7 @@ module GalleryService
     end
 
     def fetch_all
-      photos = instagram_service.photos
+      photos = instagram_client.photos
 
       photos.map do |photo|
         PhotoStruct.new(
@@ -159,12 +159,12 @@ module GalleryService
 
     private
 
-    def instagram_service
+    def instagram_client
       unless connected?
         raise Error, "Instagram is not connected for user #{user}"
       end
 
-      @instagram_service ||= InstagramService.new(user.instagram_token)
+      @instagram_client ||= InstagramService::Client.new(user.instagram_token)
     end
   end
 end
