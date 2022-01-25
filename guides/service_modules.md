@@ -168,6 +168,24 @@ module GalleryService
     end
   end
 end
+
+# Usage
+## app/controllers/gallery_controller.rb
+class GalleryController < ApplicationController
+  def index
+    @photos = GalleryService::photos(current_user, params[:repository_name])
+  end
+end
+
+## app/jobs/import_photos_job.rb
+class ImportPhotosJob
+  def perform(user, repository_name)
+    photos = GalleryService::photos(user, repository_name)
+    photos.each do |photo|
+      # save photo file to application's storate
+    end
+  end
+end
 ```
 
 
