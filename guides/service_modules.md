@@ -2,7 +2,7 @@
 
 ## Introduction
 
-*Service Modules* is a solution to decompose business logic of the application from other layers of the application and make it a bit more modular.
+*Service Modules* is a solution to decouple the business logic of the application from other layers of the application and make it a bit more modular.
 
 Refer to [Command Objects](../guides/command_objects.md) if you are looking for *Service Objects*.
 
@@ -18,7 +18,7 @@ Refer to [Command Objects](../guides/command_objects.md) if you are looking for 
 
 ### Example #1: GalleryService
 
-You have task to render user's photos. User have 3 sources of photos - Facebook, Instagram, and uploaded into our database.
+Imagine, you have a task to render users' photos. A user may have 3 sources of photos - Facebook, Instagram, and uploaded into our database and we need to render photos from any of them.
 
 ```ruby
 # app/service/gallery_service.rb
