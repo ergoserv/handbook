@@ -169,6 +169,33 @@ module GalleryService
   end
 end
 
+# app/service/facebook_service/client.rb
+module FacebookService
+  class Client
+    def initialize(token)
+      # initialize Facebook client
+    end
+    
+    def photos
+      # pull photos from Facebook
+    end
+  end
+end
+
+# app/service/instagram_service/client.rb
+module InstagramService
+  class Client
+    def initialize(token)
+      # initialize Instagram client
+    end
+    
+    def photos
+      # pull photos from Instagram
+    end
+  end
+end
+
+
 # Usage
 ## app/controllers/gallery_controller.rb
 class GalleryController < ApplicationController
