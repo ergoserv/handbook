@@ -30,9 +30,10 @@ module GalleryService
       "GalleryService::#{repository_name.to_s.camelize}Repository".constantize
 
     repository = repository_class.new(user: user)
-    unless repository.connected?
+    if !repository.connected?
       repository = EmptyRepository.new(user: user)
     end
+
     repository.fetch_all
   end
 end
