@@ -328,14 +328,16 @@ yandex_yml_offer.rb
 Based on https://guides.rubyonrails.org/configuring.html#custom-configuration.
 
 ```ruby
+# app/services/twilio_service.rb
 module TwilioService
   extend self
 
+  # loads config from config/services/twilio_service.yml
   def config
     @config ||= Rails.application.config_for('services/twilio_service')
   end
 end
 
 # Usage
-TwilioService.config[:token]
+TwilioService.config.token # or TwilioService.config[:token] or TwilioService.config['token']
 ```
