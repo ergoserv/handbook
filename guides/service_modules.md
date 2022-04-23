@@ -23,7 +23,9 @@ Imagine, you have a task to render users' photos. A user may have 3 sources of p
 ```ruby
 # app/service/gallery_service.rb
 module GalleryService
-  def self.photos(user, repository_name)
+  extend self
+
+  def photos(user, repository_name)
     repository_class =
       "GalleryService::#{repository_name.to_s.camelize}Repository".constantize
 
@@ -319,4 +321,21 @@ yandex_yml_adapter.rb
 yandex_yml_category.rb
 yandex_yml_element.rb
 yandex_yml_offer.rb
+```
+
+### Example #3: Service Configurable
+
+Based on https://guides.rubyonrails.org/configuring.html#custom-configuration.
+
+```ruby
+module TwilioService
+  extend self
+
+  def config
+    @config ||= Rails.application.config_for('services/twilio_service')
+  end
+end
+
+# Usage
+TwilioService.config[:token]
 ```
