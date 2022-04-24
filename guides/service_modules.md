@@ -23,7 +23,7 @@ Imagine, you have a task to render users' photos. A user may have 3 sources of p
 ```ruby
 # app/service/gallery_service.rb
 module GalleryService
-  extend self
+  module_function
 
   def photos(user, repository_name)
     repository_class =
@@ -224,9 +224,11 @@ end
 ```ruby
 # app/services/import_service.rb
 module ImportService
+  module_function
+
   AVALIABLE_ADAPTERS = %w(yandex_yml yandex_csv yandex_scsv yandex_tsv)
 
-  def self.factory(object)
+  def factory(object)
     case
     when object.is_a?(Hash)
       case object[:adapter]
@@ -331,7 +333,7 @@ Based on https://guides.rubyonrails.org/configuring.html#custom-configuration.
 ```ruby
 # app/services/twilio_service.rb
 module TwilioService
-  extend self
+  module_function
 
   # loads config from config/services/twilio_service.yml
   def config
