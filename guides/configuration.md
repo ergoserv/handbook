@@ -97,15 +97,16 @@ end
 - Section in the application configuration file:
 ```ruby
 # config/settings.yml
-my_service:
-  key: 'value'
+services:
+  my_service:
+    key: 'value'
 
 # services/my_service.rb
 module MyService
   module_function
 
   def config
-    @config ||= AppConfig.my_service
+    @config ||= AppConfig.services.my_service
   end
 end
 ```
