@@ -13,6 +13,7 @@ Refer to [Command Objects](../guides/command_objects.md) if you are looking for 
 * Basic service file should define module (e.g.: `module OrderService`, `module GalleryService`)
 * Basic service module may contain constants, configurations, class methods
 * Use subdirectories to store subclasses of the service (e.g.: `gallery_service.rb`, `gallery_service/facebook_repository.rb`, etc).
+* Use unified approach for configs (see [Service Module Configuration](https://github.com/ergoserv/handbook/blob/master/guides/configuration.md#service-module-configuration)).
 
 ## Examples
 
@@ -328,19 +329,4 @@ yandex_yml_offer.rb
 
 ### Example #3: Service Configurable
 
-Based on https://guides.rubyonrails.org/configuring.html#custom-configuration.
-
-```ruby
-# app/services/twilio_service.rb
-module TwilioService
-  module_function
-
-  # loads config from config/services/twilio_service.yml
-  def config
-    @config ||= Rails.application.config_for('services/twilio_service')
-  end
-end
-
-# Usage
-TwilioService.config.token # or TwilioService.config[:token] or TwilioService.config['token']
-```
+See [Service Module Configuration](https://github.com/ergoserv/handbook/blob/master/guides/configuration.md#service-module-configuration).
