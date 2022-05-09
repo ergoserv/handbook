@@ -6,7 +6,7 @@
 
 ## Conventions
 
-* Commands go under the `app/commands` directory. In case when a command is a part of a module, consider placing it into the directory structure suggested by [Service Modules](guides/service_modules.md).
+* Commands go under the `app/commands` directory. In case when a command is a part of a module, consider placing it into the directory structure suggested by [Service Modules](https://github.com/ergoserv/handbook/blob/master/guides/service_modules.md).
 * Command name should have suffix `Command`.
 * Command name should contain a verb (e.g. `PostPublishCommand`).
 * Command should have only one public method (`#perform`).
