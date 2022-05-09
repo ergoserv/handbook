@@ -11,6 +11,7 @@ Our collection of guides, recipes and scripts for helping you get things done, b
   - [Code Style](guides/code_style.md)
   - [Coding Principles](guides/coding_principles.md)
   - [Command Objects](guides/command_objects.md) (a.k.a. Service Objects)
+  - [Configuration](guides/configuration.md)
   - [Error Handing](guides/error_handling.md)
   - [Form Objects](guides/form_objects.md)
   - [Git](guides/git.md)
@@ -24,7 +25,6 @@ Our collection of guides, recipes and scripts for helping you get things done, b
   - [Testing](guides/testing.md)
   - [Variables](guides/variables.md)
   - [Vocabulary](guides/vocabulary.md)
-* [Templates](templates/)
 
 ### Inspired by
 
