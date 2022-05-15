@@ -10,7 +10,7 @@
 * Command name should have suffix `Command`.
 * Command name should contain a verb (e.g. `PostPublishCommand`).
 * Command should have only one public method (`#perform`).
-* Keep method `#perform` short, simple and clear.
+* Focus on readability of the `#perform` method, keep it short, simple and clear.
 * Put all business logic into private methods with a very clear, self-explanatory and meaningful names.
 * Use [auxiliary_rails](https://github.com/ergoserv/auxiliary_rails) gem.
 
