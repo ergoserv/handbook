@@ -16,6 +16,7 @@ API is an important part of web applications. They provide interfaces for commun
 * Each API resource, entity class or helpers module class are wrapped into corresponding module (e.g. `AppV1API::Resources`, `AppV1API::Entities`, `AppV1API::Helpers`).
 * Entity class name corresponds with the model it is related to (e.g. `UserEntity` for `User` model, `OrderEntity` for `Order` model).
 * Specs directory structure follows same directory names (e.g. `spec/apis/app_v1_api/`, `spec/apis/mobile_v1_api/`).
+* Consider using `rails generate auxiliary_rails:api_resource` by [auxiliary_rails](https://github.com/ergoserv/auxiliary_rails) gem.
 
 ### Directory Structure
 
@@ -88,7 +89,7 @@ module AppV1API::Resources
       post do
         # login user
         present user,
-          with: ApiV1API::Entities::UserEntity
+          with: AppV1API::Entities::UserEntity
       end
 
       desc 'Logout user'
@@ -229,5 +230,6 @@ end
 ## References
 
 * [Gems for APIs](libraries.md#api) - ErgoServ's list of recommended gems.
+* https://github.com/ergoserv/auxiliary_rails
 * [httpstatuses.com](https://httpstatuses.com) - HTTP Status Codes is an easy to reference database of HTTP Status Codes with their definitions and helpful code references all in one place.
 * [JSON:API](https://jsonapi.org) - A specification for building advanced APIs in JSON.
