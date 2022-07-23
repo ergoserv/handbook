@@ -64,6 +64,10 @@ Use our gem [`rubocop-ergoserv`](https://github.com/ergoserv/rubocop-ergoserv) t
 * Use separate locale file for mailer translations (`config/locles/mailers.en.yml`).
 * Use `application_mailer` translation scope to group strings used in all/many mailers.
 
+## Mailers
+
+* Place mailer views to 'app/views/mailers' (e.g. 'app/views/mailers/account_mailer/', etc) by adding `prepend_view_path 'app/views/mailers'` to `ApplicationMailer`.
+
 ### Rake Tasks
 
 * Put all application rake tasks under the `namespace` named according to appliation. This will allow to separate them from all other tasks when you call `rake --tasks`.
