@@ -72,7 +72,7 @@ ENV Variables is a classic way to store environment-specific settings, secrets, 
 See [Service Modules](https://github.com/ergoserv/handbook/blob/master/guides/service_modules.md).
 
 In case you need extend your Service Modules with configuratoin, concider the following approaches
-or use `ServiceConfigurable` extension by [AuxiliaryRails](https://github.com/ergoserv/auxiliary_rails).
+or use `Service` extension by [AuxiliaryRails](https://github.com/ergoserv/auxiliary_rails#service-modules).
 
 We recommend starting with constant as a fastest and simple approach, and then switch to application or service configuration when you need more flexibility.
 Thankfully to the unified interface, you won't need to change the code calling for the configs,
@@ -136,7 +136,7 @@ module MyService
 end
 ```
 
-### References
+## References
 - [Service Modules](https://github.com/ergoserv/handbook/blob/master/guides/service_modules.md)
 - [AuxiliaryRails](https://github.com/ergoserv/auxiliary_rails)
 - https://github.com/rubyconfig/config
