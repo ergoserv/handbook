@@ -82,11 +82,11 @@ because any of the approaches below will provide with access to config value via
 ```ruby
 # services/my_service.rb
 module MyService
-  module_function
-
   CONFIG = {
     key: 'value'
   }
+
+  module_function
 
   def config
     @config ||= ActiveSupport::OrderedOptions.new.update(CONFIG)
