@@ -1,6 +1,7 @@
 # ErgoServ Handbook
 
-Our collection of guides, recipes and scripts for helping you get things done, better.
+Our collection of guides, recipes, and scripts for helping you get things done better. 
+Crafted by and used at [ErgoServ](https://www.ergoserv.com).
 
 ## Table of Contents
 
@@ -38,7 +39,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/ergose
 
 ## License
 
-These resources are copyright of [ErgoServ](https://www.ergoserv.com). It is free software and available to distribute under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+These resources are copyrighted by [ErgoServ](https://www.ergoserv.com). It is free software and available to distribute under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
 ------
 
@@ -46,4 +47,4 @@ These resources are copyright of [ErgoServ](https://www.ergoserv.com). It is fre
 
 These resources were created and are maintained by [ErgoServ](https://www.ergoserv.com).
 
-If you like what you see and would like to hire us or join us, [get in touch](https://www.ergoserv.com)!
+If you like what you see and want to hire or join us, [get in touch](https://www.ergoserv.com)!
