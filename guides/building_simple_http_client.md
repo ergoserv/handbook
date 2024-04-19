@@ -45,7 +45,7 @@ module TwitterService
   module_function
 
   def client
-    @client ||=TwitterService::TwitterClient.new(secret_twitter_email, secret_twitter_password)
+    @client ||= TwitterService::TwitterClient.new(secret_twitter_email, secret_twitter_password)
   end
 end
 ```
