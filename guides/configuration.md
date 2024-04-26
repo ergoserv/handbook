@@ -71,7 +71,7 @@ ENV Variables is a classic way to store environment-specific settings, secrets, 
 
 See [Service Modules](https://github.com/ergoserv/handbook/blob/master/guides/service_modules.md).
 
-In case you need extend your Service Modules with configuratoin, concider the following approaches
+In case you need extend your Service Modules with configuration, consider the following approaches
 or use `Service` extension by [AuxiliaryRails](https://github.com/ergoserv/auxiliary_rails#service-modules).
 
 We recommend starting with constant as a fastest and simple approach, and then switch to application or service configuration when you need more flexibility.
