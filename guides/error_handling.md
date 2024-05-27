@@ -72,7 +72,9 @@ end
 For example, we use Twilio to send SMS. Working with Twilio we can get many different errors - user errors (e.g. incorrect phone number), account errors (e.g. insufficient funds), service errors (e.g. service is down), etc. We want to handle all of them and provide users with understandable feedback as well as notify our monitoring systems.
 
 ```ruby
-class TwilioService
+module TwilioService
+  module_function
+
   def send_sms(phone_number, text)
     # call Twilio REST client
   rescue Twilio::REST::RestError, Twilio::REST::TwilioError => e
@@ -80,10 +82,12 @@ class TwilioService
   end
 end
 
-class TwilioService::Error < ApplicationError
-  #
-  def friendly_message
-    I18n.t("code_#{code}", scope: 'twilio_service.errors', default: :default_message)
+module TwilioService
+  class Error < ApplicationError
+    #
+    def friendly_message
+      I18n.t("code_#{code}", scope: 'twilio_service.errors', default: :default_message)
+    end
   end
 end
 
