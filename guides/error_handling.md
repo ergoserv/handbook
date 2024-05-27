@@ -73,9 +73,9 @@ For example, we use Twilio to send SMS. Working with Twilio we can get many diff
 
 ```ruby
 class TwilioService
-  def send_sms(phone_numer, text)
+  def send_sms(phone_number, text)
     # call Twilio REST client
-  rescue rescue Twilio::REST::RestError, Twilio::REST::TwilioError => e
+  rescue Twilio::REST::RestError, Twilio::REST::TwilioError => e
     raise TwilioService::Error.wrap(e)
   end
 end
