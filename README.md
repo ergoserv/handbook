@@ -19,6 +19,7 @@ Crafted by and used at [ErgoServ](https://www.ergoserv.com).
   - [Github Actions](guides/github_actions.md) - CI
   - [Libraries](guides/libraries.md) - list of recommended Ruby Gems and other libraries.
   - [Models](guides/models.md)
+  - [Naming Conventions](guides/naming_conventions.md)
   - [Policies](guides/policies.md)
   - [Query Objects](guides/query_objects.md)
   - [Service Modules](guides/service_modules.md)
